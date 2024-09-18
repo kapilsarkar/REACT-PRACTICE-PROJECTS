@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import InputCounter from "./InputCounter";
 const Body = () => {
   const [result, setResult] = useState(0);
   function Increment() {
@@ -8,7 +8,10 @@ const Body = () => {
   function Decrement() {
     setResult(result - 1);
   }
-
+  
+  function Reset(){
+    setResult(0)
+  }
 
   return (
     <div className="body">
@@ -19,10 +22,12 @@ const Body = () => {
         <button className="plusBtn" onClick={Increment}>
           Increment
         </button>
+        <button className="resetBtn" onClick={Reset}>Reset</button>
         <button className="minusBtn" onClick={Decrement}>
           Decrement
         </button>
       </div>
+      <InputCounter/>
     </div>
   );
 };

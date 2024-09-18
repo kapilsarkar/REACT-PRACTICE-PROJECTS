@@ -49,3 +49,35 @@
     border-radius: 5px;
     font-size: 15px;
 }
+.resetBtn{
+    color: #673AB7;
+    background-color: #FFEB3B;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 12px;
+    font-size: 15px;
+}
+.input-counter{
+    margin-top: 1.5rem;
+}
+.input-counter{
+    padding: 10px 15px;
+    width: 100%;
+}
+.input-counter-heading{
+    text-align: center;
+}
+.input-counter-details{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.input-result{
+    font-size: 32px;
+    text-align: center;
+}
+.input-box{
+    padding: 5px;
+}
