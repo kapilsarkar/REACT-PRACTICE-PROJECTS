@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputCounter from "./InputCounter";
+
 const Body = () => {
   const [result, setResult] = useState(0);
   function Increment() {
@@ -27,7 +27,6 @@ const Body = () => {
           Decrement
         </button>
       </div>
-      <InputCounter/>
     </div>
   );
 };
