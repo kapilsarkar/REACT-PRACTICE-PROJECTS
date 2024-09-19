@@ -6,11 +6,15 @@ const Body = () => {
     setResult(result + 1);
   }
   function Decrement() {
-    setResult(result - 1);
+    if (result === 0) {
+      setResult(0);
+    } else {
+      setResult(result - 1);
+    }
   }
-  
-  function Reset(){
-    setResult(0)
+
+  function Reset() {
+    setResult(0);
   }
 
   return (
@@ -22,7 +26,9 @@ const Body = () => {
         <button className="plusBtn" onClick={Increment}>
           Increment
         </button>
-        <button className="resetBtn" onClick={Reset}>Reset</button>
+        <button className="resetBtn" onClick={Reset}>
+          Reset
+        </button>
         <button className="minusBtn" onClick={Decrement}>
           Decrement
         </button>

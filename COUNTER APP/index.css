@@ -32,6 +32,7 @@
     align-items: center;
     margin-top: 1.2rem;
     gap: 2.7rem;
+    cursor: pointer;
 }
 .plusBtn{
     padding: 10px 12px;
@@ -40,6 +41,7 @@
     color: #ffffff;
     border-radius: 5px;
     font-size: 15px;
+    cursor: pointer;
 }
 .minusBtn{
     padding: 10px 12px;
@@ -48,6 +50,7 @@
     color: #ffffff;
     border-radius: 5px;
     font-size: 15px;
+    cursor: pointer;
 }
 .resetBtn{
     color: #673AB7;
@@ -56,6 +59,7 @@
     border-radius: 5px;
     padding: 10px 12px;
     font-size: 15px;
+    cursor: pointer;
 }
 .input-counter{
     margin-top: 1.5rem;
