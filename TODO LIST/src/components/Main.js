@@ -4,29 +4,25 @@ const Main = () => {
   const [inputList, setInputList] = useState("");
   const [items, setItems] = useState([]);
 
-  const itemEvent = (event) => {
+  const handleChange = (event) => {
     setInputList(event.target.value);
   };
 
-  const listOfItems = () => {
-    setItems((oldItems) => {
-      return [...oldItems, inputList];
-    });
+  const listOfItem = () => {
+    setItems((oldItems) =>{
+      return [...oldItems, inputList]});
   };
 
   return (
     <>
+      <h3 className="heading">TO-DO LIST</h3>
       <div className="main-div">
-        <div className="center-div">
-          <br />
-          <h1>To-Do List</h1>
-          <br />
-          <input type="text" placeholder="Add Item" onChange={itemEvent} />
-          <button className="btnAdd" onClick={listOfItems}>
-            Add
+        <div className="container">
+          <input type="text" className="input-field" onChange={handleChange} />
+          <button className="btnAdd" onClick={listOfItem}>
+            Add +{" "}
           </button>
           <ol>
-            {/* <li>{inputList}</li> */}
             {items.map((itemVal) => {
               return <li>{itemVal}</li>;
             })}
