@@ -9,6 +9,14 @@ const Main = () => {
     setInputList(event.target.value);
   };
 
+  const deleteItem = (id) => {
+    setItems((oldItems) => {
+      return oldItems.filter((arrayElement, index) => {
+        return index !== id;
+      });
+    });
+  };
+
   const listOfItem = () => {
     setItems((oldItems) => {
       return [...oldItems, inputList];
@@ -32,7 +40,14 @@ const Main = () => {
           </button>
           <ol>
             {items.map((itemVal, index) => {
-              return <TodoList key={index} id="index" text={itemVal} />;
+              return (
+                <TodoList
+                  key={index}
+                  id={index}
+                  text={itemVal}
+                  onSelect={deleteItem}
+                />
+              );
             })}
           </ol>
         </div>

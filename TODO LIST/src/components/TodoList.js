@@ -1,13 +1,13 @@
 const TodoList = (props) => {
-  const deleteItem = () => {
-    console.log("deleted");
-  };
-  const { text } = props;
+  
+  const { text,onSelect,id } = props;
   return (
     <>
       <div className="list-style">
         <li className="each-list">{text} </li>{" "}
-        <i className="fa-solid fa-trash" onClick={deleteItem}></i>
+        <i className="fa-solid fa-trash" onClick={()=>{
+          onSelect(id)
+        }}></i>
       </div>
     </>
   );
