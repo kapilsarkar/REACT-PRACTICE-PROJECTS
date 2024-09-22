@@ -2,14 +2,14 @@ import { useState } from "react";
 
 const Main = () => {
   const [input, setInput] = useState();
-  const [count,setCount] = useState(input)
+  const [count, setCount] = useState();
   const handleChange = (event) => {
     setInput(event.target.value);
-  };
 
+    
+  };
   const handlePlus = () => {
-       setCount(count+1)
-       console.log(`${setCount(count+1)}`)
+    setCount(count + 1);
   };
 
   return (
@@ -20,7 +20,9 @@ const Main = () => {
         <p className="input-result">{input}</p>
       </div>
       <div className="button-container">
-        <button className="btnPlus" onClick={handlePlus}>Increment</button>
+        <button className="btnPlus" onClick={handlePlus}>
+          Increment
+        </button>
         <button className="btnMinus">Decrement</button>
       </div>
     </>
