@@ -8,14 +8,17 @@ const Main = () => {
   const [count, setCount] = useState(null);
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+    
   };
 
   const counterResult = ()=>{
      setCount(inputValue)
+     
   }
 
   const handlePlus = () => {
     setCount(count + 1);
+  
   };
 
   const handleMinus = ()=>{
@@ -32,7 +35,8 @@ const Main = () => {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <p className="input-result">{counterResult}</p>
+        {/* <p className="input-result">{counterResult}</p> */}
+        <input type="text" onChange={counterResult}/>
       </div>
       <div className="button-container">
         <button className="btnPlus" onClick={handlePlus}>
