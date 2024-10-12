@@ -1,12 +1,26 @@
 import { useState } from "react";
-const Main = ()=>{
-    const [searchText,setSearchText] = useState("")
-    return(
-        <div className="main">
-         <input type="text" className="input-box"/>
-         <button>Add</button>
-        </div>
-    )
-}
+const Main = () => {
+  const [searchText, setSearchText] = useState("");
 
-export default Main
+  function handleChange(event) {
+    setSearchText(event.target.value);
+  }
+
+  function handleClick() {
+    console.log(searchText)
+  }
+
+  return (
+    <div className="main">
+      <input
+        type="text"
+        className="input-box"
+        value={searchText}
+        onChange={handleChange}
+      />
+      <button onClick={handleClick}>Add</button>
+    </div>
+  );
+};
+
+export default Main;
