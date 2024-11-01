@@ -1,11 +1,11 @@
 {
-  "name": "weather-app",
+  "name": "weatherapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite index.html",
+    "build": "vite build index.html",
     "lint": "eslint .",
     "preview": "vite preview"
   },
