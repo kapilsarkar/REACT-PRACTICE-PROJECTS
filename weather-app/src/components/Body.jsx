@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { key } from "../utils/constant";
+import { FaLocationDot } from "react-icons/fa6";
+import { BsCloudRainFill } from "react-icons/bs";
+import { TiWeatherPartlySunny } from "react-icons/ti";
 const Body = () => {
   const [searchCity, setSearchCity] = useState("");
   const [weatherLocation, setWeatherLocation] = useState();
@@ -41,15 +44,20 @@ const Body = () => {
             Search
           </button>
         </div>
-        <img src={weatherCurrent?.condition?.icon} />
-        <p>{weatherCurrent?.temp_c} ℃</p>
-        <p>{weatherLocation?.name}</p>
-        <p>Weather Condition : {weatherCurrent?.condition?.text} </p>
-        <p>Feels Like :{weatherCurrent?.feelslike_c} <img src ="./feelslike.png" className="feels-like"/></p>
-        <p>
+        <div className="display-part1">
+          <h2>{weatherCurrent?.temp_c} ℃</h2>
+          <img src={weatherCurrent?.condition?.icon} />
+        </div>
+        <div className="display-part2">
+        <h2>Location: <FaLocationDot />{weatherLocation?.name}</h2>
+        <h3>Weather Condition : {weatherCurrent?.condition?.text} <TiWeatherPartlySunny /> </h3>
+        <h3>
           Rain - {weatherCurrent?.cloud}%{" "}
-          <img src="./rainstatus.gif" className="rain-status" />
-        </p>
+          <BsCloudRainFill />
+        </h3>
+        </div>
+        <p>Feels Like :{weatherCurrent?.feelslike_c}℃</p>
+       
       </div>
     </div>
   );

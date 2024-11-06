@@ -25,10 +25,11 @@ body {
 .left-container {
   padding: 1.5rem;
   width: 38%;
-  background-color: #fdffee;
+  background-color: #03524a;
   box-shadow: 0 10px 12px 0 rgba(235, 201, 201, 0.2), 0 6px 20px 0 #72726c;
   border-radius: 10px;
-  font-weight: 700;
+  font-weight: 900;
+  color: #fff
 }
 .input-box {
   cursor: pointer;
@@ -52,10 +53,25 @@ body {
 }
 .search-container {
   margin-top: 1.2rem;
-  padding: 1.5rem;
+  padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+.display-part1{
+  display: flex;
+  flex-wrap: wrap;
+ align-items: center;
+  gap: 1.2rem;
+}
+.display-part2{
+  color: #ffea2d;
+}
+.display-part1 img{
+  width: 38%;
+}
+.display-part1 h2{
+  font-size: 38px;
 }
 .rain-status {
   width: 15%;
