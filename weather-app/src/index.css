@@ -14,7 +14,6 @@ body {
 
 .center-container {
   border-radius: 5px;
-  margin-top: 1.5rem;
   box-shadow: 0 4px 8px 0 rgba(235, 201, 201, 0.2),
     0 6px 20px 0 rgba(199, 182, 182, 0.19);
   display: flex;
@@ -126,6 +125,27 @@ body {
   padding: 1.2rem;
   border-radius: 10px;
   color: #ffea2d;
+}
+.right-container-menu{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.right-container-menu li{
+  background-color: #FFC107;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.location-head{
+  background-color: #FFC107;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 @media(max-width:790px){
   .left-container{

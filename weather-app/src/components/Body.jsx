@@ -69,7 +69,10 @@ const Body = () => {
         </div>
       </div>
       <div className="right-container">
-        <h3>Other Highlights</h3>
+        <ul className="right-container-menu">
+          <li>Other Highlights</li>
+          <li>3-Day Forecast</li>
+        </ul>
         <div className="other-weather-details">
           <div className="humidity">
             <h3>Humidity</h3>
@@ -93,7 +96,7 @@ const Body = () => {
            <p>Heat Index: {weatherCurrent?.heatindex_c}℃</p>
           </div>
         </div>
-        <h3>Location Details</h3>
+        <h3 className="location-head">Location Details</h3>
         <div className="location-details">
          <h3>City Name: {weatherLocation?.name}</h3>
          <h3>State Name: {weatherLocation?.region}</h3>
