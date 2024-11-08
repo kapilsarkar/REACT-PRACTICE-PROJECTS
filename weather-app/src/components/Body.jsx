@@ -69,10 +69,9 @@ const Body = () => {
         </div>
       </div>
       <div className="right-container">
-        <ul className="right-container-menu">
-          <li>Other Highlights</li>
-          <li>3-Day Forecast</li>
-        </ul>
+        <h3 className="right-container-menu">
+          Other Highlights
+        </h3>
         <div className="other-weather-details">
           <div className="humidity">
             <h3>Humidity</h3>
@@ -91,21 +90,25 @@ const Body = () => {
             <p>Wind Degree: {weatherCurrent?.wind_degree}℃</p>
           </div>
           <div className="uv-index">
-           <h3>UV Index</h3>
-           <h3><TbUvIndex />{weatherCurrent?.uv}</h3>
-           <p>Heat Index: {weatherCurrent?.heatindex_c}℃</p>
+            <h3>UV Index</h3>
+            <h3>
+              <TbUvIndex />
+              {weatherCurrent?.uv}
+            </h3>
+            <p>Heat Index: {weatherCurrent?.heatindex_c}℃</p>
           </div>
         </div>
         <h3 className="location-head">Location Details</h3>
         <div className="location-details">
-         <h3>City Name: {weatherLocation?.name}</h3>
-         <h3>State Name: {weatherLocation?.region}</h3>
-         <h3>Country Name : {weatherLocation?.country}</h3>
-         <h3>Zone Name : {weatherLocation?.tz_id}</h3>
-         <h3>Local Data/Time: {weatherLocation?.localtime}</h3>
+          <h3>City Name: {weatherLocation?.name}</h3>
+          <h3>State Name: {weatherLocation?.region}</h3>
+          <h3>Country Name : {weatherLocation?.country}</h3>
+          <h3>Zone Name : {weatherLocation?.tz_id}</h3>
+          <h3>Local Data/Time: {weatherLocation?.localtime}</h3>
         </div>
       </div>
     </div>
+    
   );
 };
 
