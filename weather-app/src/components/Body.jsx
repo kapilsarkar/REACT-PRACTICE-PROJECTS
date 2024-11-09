@@ -7,7 +7,10 @@ import { TiWeatherWindyCloudy } from "react-icons/ti";
 import { WiHumidity } from "react-icons/wi";
 import { GiWindpump } from "react-icons/gi";
 import { TbUvIndex } from "react-icons/tb";
-import ThreeDay from "./ThreeDay";
+import { CiCalendarDate } from "react-icons/ci";
+import { BsSunriseFill } from "react-icons/bs";
+import { BsFillSunsetFill } from "react-icons/bs";
+
 const Body = () => {
   const [searchCity, setSearchCity] = useState("");
   const [weatherLocation, setWeatherLocation] = useState();
@@ -126,12 +129,27 @@ const Body = () => {
         </div>
       </div>
       <div className="three-day-main-container">
-        {/* <ThreeDay threeDay = {threeDayWeather?.forecast}/> */}
-        {threeDayWeather.forecastday.map((days)=>{
-          return(
-           console.log(days)
-          )
-        })}
+      <div className="three-day-container">
+        <h3 className="three-day-heading">THREE DAY FORECAST</h3>
+        <div className="three-day-details">
+          <div className="day-one-date">
+            <h3>DAY-01 
+            </h3>
+            <CiCalendarDate />
+          <h3>{threeDayWeather?.forecastday[0]?.date}</h3>
+          </div>
+          <div className="day-one-sunrise">
+            <h3>Sunrise and Sunset</h3>
+            <h3><BsSunriseFill />{threeDayWeather?.forecastday[0].astro.sunrise}</h3>
+            <h3><BsFillSunsetFill />{threeDayWeather?.forecastday[0].astro.sunset}</h3>
+          </div>
+          <div className="day-one-condition">
+            <h3>Condition</h3>
+            <h3>{threeDayWeather?.forecastday[0]?.day?.condition?.text}</h3>
+            <img src={threeDayWeather?.forecastday[0]?.day?.condition?.icon}/>
+          </div>
+        </div>    
+       </div>
       </div>
     </>
   );
