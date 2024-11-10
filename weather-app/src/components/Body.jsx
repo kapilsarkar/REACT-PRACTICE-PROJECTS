@@ -69,10 +69,10 @@ const Body = () => {
               placeholder="Enter City Name..."
               value={searchCity}
               onChange={(e) => setSearchCity(e.target.value)}
-              />
-             
+            />
+
             <button className="searchBtn" onClick={fetchWeather}>
-            <FaSearch /> Search
+              <FaSearch /> Search
             </button>
           </div>
           <div className="display-part1">
@@ -133,6 +133,14 @@ const Body = () => {
             <h3>Zone Name : {weatherLocation?.tz_id}</h3>
             <h3>Local Data/Time: {weatherLocation?.localtime}</h3>
           </div>
+        </div>
+        <div className="other">
+          <h3>Day-01</h3>
+          <h3>{threeDayWeather?.forecastday[0]?.date}</h3>
+          <h3>{threeDayWeather?.forecastday[0]?.day?.condition?.text}</h3>
+          <img src={threeDayWeather?.forecastday[0]?.day?.condition?.icon} />
+          <h3>{threeDayWeather?.forecastday[0]?.day?.avgtemp_c}℃</h3>
+          {threeDayWeather?.forecastday[0]?.day?.daily_chance_of_rain}
         </div>
       </div>
       <div className="three-day-main-container">
