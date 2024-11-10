@@ -8,6 +8,19 @@ body {
 .weather-head {
   text-align: center;
 }
+.weather-heading {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  cursor: pointer;
+  flex-wrap: wrap;
+  background-color: #ffc107;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 .main-container {
   width: 100%;
 }
@@ -186,9 +199,12 @@ body {
 .three-day-details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: #673ab7;
+  border: 2px solid #FFC107;
+  border-radius: 10px;
 }
 .day-one-date {
   box-shadow: #141208 0px 50px 100px -20px,
@@ -199,7 +215,7 @@ body {
   color: #ffea2d;
   text-align: center;
 }
-.day-one-sunrise{
+.day-one-sunrise {
   box-shadow: #141208 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -208,7 +224,7 @@ body {
   color: #ffea2d;
   text-align: center;
 }
-.day-one-condition{
+.day-one-condition {
   box-shadow: #141208 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -217,8 +233,29 @@ body {
   color: #ffea2d;
   text-align: center;
 }
-.day-one-condition img{
+.day-one-condition img {
   width: 50%;
+}
+.day-one-avgTemp {
+  box-shadow: #141208 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 1.2rem;
+  border-radius: 10px;
+  color: #ffea2d;
+  text-align: center;
+}
+.day-one-chanceOfRain {
+  box-shadow: #141208 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 1.2rem;
+  border-radius: 10px;
+  color: #ffea2d;
+  text-align: center;
+}
+.all-three {
+  margin-top: 0.5rem;
 }
 @media (max-width: 790px) {
   .center-container {
@@ -242,5 +279,8 @@ body {
   }
   .input-box {
     padding: 5px 10px;
+  }
+  .three-day-container{
+    padding: 0.5rem;
   }
 }

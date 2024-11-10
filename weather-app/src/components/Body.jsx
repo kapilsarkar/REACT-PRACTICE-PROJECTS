@@ -10,7 +10,9 @@ import { TbUvIndex } from "react-icons/tb";
 import { CiCalendarDate } from "react-icons/ci";
 import { BsSunriseFill } from "react-icons/bs";
 import { BsFillSunsetFill } from "react-icons/bs";
-
+import { CiTempHigh } from "react-icons/ci";
+import { GiRaining } from "react-icons/gi";
+import { FaSearch } from "react-icons/fa";
 const Body = () => {
   const [searchCity, setSearchCity] = useState("");
   const [weatherLocation, setWeatherLocation] = useState();
@@ -56,6 +58,10 @@ const Body = () => {
     <>
       <div className="center-container">
         <div className="left-container">
+          <h3 className="weather-heading">
+            <TiWeatherPartlySunny />
+            Weather App
+          </h3>
           <div className="search-container">
             <input
               type="text"
@@ -63,9 +69,10 @@ const Body = () => {
               placeholder="Enter City Name..."
               value={searchCity}
               onChange={(e) => setSearchCity(e.target.value)}
-            />
+              />
+             
             <button className="searchBtn" onClick={fetchWeather}>
-              Search
+            <FaSearch /> Search
             </button>
           </div>
           <div className="display-part1">
@@ -129,27 +136,122 @@ const Body = () => {
         </div>
       </div>
       <div className="three-day-main-container">
-      <div className="three-day-container">
-        <h3 className="three-day-heading">THREE DAY FORECAST</h3>
-        <div className="three-day-details">
-          <div className="day-one-date">
-            <h3>DAY-01 
-            </h3>
-            <CiCalendarDate />
-          <h3>{threeDayWeather?.forecastday[0]?.date}</h3>
+        <div className="three-day-container">
+          <h3 className="three-day-heading">THREE DAY FORECAST</h3>
+          <div className="all-three">
+            <div className="three-day-details">
+              <div className="day-one-date">
+                <h3>DAY-01</h3>
+                <CiCalendarDate />
+                <h3>{threeDayWeather?.forecastday[0]?.date}</h3>
+              </div>
+              <div className="day-one-sunrise">
+                <h3>Sunrise and Sunset</h3>
+                <h3>
+                  <BsSunriseFill />
+                  {threeDayWeather?.forecastday[0].astro.sunrise}
+                </h3>
+                <h3>
+                  <BsFillSunsetFill />
+                  {threeDayWeather?.forecastday[0].astro.sunset}
+                </h3>
+              </div>
+              <div className="day-one-condition">
+                <h3>Condition</h3>
+                <h3>{threeDayWeather?.forecastday[0]?.day?.condition?.text}</h3>
+                <img
+                  src={threeDayWeather?.forecastday[0]?.day?.condition?.icon}
+                />
+              </div>
+              <div className="day-one-avgTemp">
+                <h3>Average Temp.</h3>
+                <CiTempHigh />
+                <h3>{threeDayWeather?.forecastday[0]?.day?.avgtemp_c}℃</h3>
+              </div>
+              <div className="day-one-chanceOfRain">
+                <h3>Chances of Rain in %</h3>
+                <GiRaining />
+                <h3>
+                  {threeDayWeather?.forecastday[0]?.day?.daily_chance_of_rain}
+                </h3>
+              </div>
+            </div>
+            <div className="three-day-details">
+              <div className="day-one-date">
+                <h3>DAY-02</h3>
+                <CiCalendarDate />
+                <h3>{threeDayWeather?.forecastday[1]?.date}</h3>
+              </div>
+              <div className="day-one-sunrise">
+                <h3>Sunrise and Sunset</h3>
+                <h3>
+                  <BsSunriseFill />
+                  {threeDayWeather?.forecastday[1].astro.sunrise}
+                </h3>
+                <h3>
+                  <BsFillSunsetFill />
+                  {threeDayWeather?.forecastday[1].astro.sunset}
+                </h3>
+              </div>
+              <div className="day-one-condition">
+                <h3>Condition</h3>
+                <h3>{threeDayWeather?.forecastday[1]?.day?.condition?.text}</h3>
+                <img
+                  src={threeDayWeather?.forecastday[1]?.day?.condition?.icon}
+                />
+              </div>
+              <div className="day-one-avgTemp">
+                <h3>Average Temp.</h3>
+                <CiTempHigh />
+                <h3>{threeDayWeather?.forecastday[1]?.day?.avgtemp_c}℃</h3>
+              </div>
+              <div className="day-one-chanceOfRain">
+                <h3>Chances of Rain in %</h3>
+                <GiRaining />
+                <h3>
+                  {threeDayWeather?.forecastday[1]?.day?.daily_chance_of_rain}
+                </h3>
+              </div>
+            </div>
+            <div className="three-day-details">
+              <div className="day-one-date">
+                <h3>DAY-03</h3>
+                <CiCalendarDate />
+                <h3>{threeDayWeather?.forecastday[2]?.date}</h3>
+              </div>
+              <div className="day-one-sunrise">
+                <h3>Sunrise and Sunset</h3>
+                <h3>
+                  <BsSunriseFill />
+                  {threeDayWeather?.forecastday[2].astro.sunrise}
+                </h3>
+                <h3>
+                  <BsFillSunsetFill />
+                  {threeDayWeather?.forecastday[2].astro.sunset}
+                </h3>
+              </div>
+              <div className="day-one-condition">
+                <h3>Condition</h3>
+                <h3>{threeDayWeather?.forecastday[2]?.day?.condition?.text}</h3>
+                <img
+                  src={threeDayWeather?.forecastday[2]?.day?.condition?.icon}
+                />
+              </div>
+              <div className="day-one-avgTemp">
+                <h3>Average Temp.</h3>
+                <CiTempHigh />
+                <h3>{threeDayWeather?.forecastday[2]?.day?.avgtemp_c}℃</h3>
+              </div>
+              <div className="day-one-chanceOfRain">
+                <h3>Chances of Rain in %</h3>
+                <GiRaining />
+                <h3>
+                  {threeDayWeather?.forecastday[2]?.day?.daily_chance_of_rain}
+                </h3>
+              </div>
+            </div>
           </div>
-          <div className="day-one-sunrise">
-            <h3>Sunrise and Sunset</h3>
-            <h3><BsSunriseFill />{threeDayWeather?.forecastday[0].astro.sunrise}</h3>
-            <h3><BsFillSunsetFill />{threeDayWeather?.forecastday[0].astro.sunset}</h3>
-          </div>
-          <div className="day-one-condition">
-            <h3>Condition</h3>
-            <h3>{threeDayWeather?.forecastday[0]?.day?.condition?.text}</h3>
-            <img src={threeDayWeather?.forecastday[0]?.day?.condition?.icon}/>
-          </div>
-        </div>    
-       </div>
+        </div>
       </div>
     </>
   );
