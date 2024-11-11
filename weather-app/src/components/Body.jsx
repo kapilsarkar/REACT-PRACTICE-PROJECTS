@@ -256,12 +256,23 @@ const Body = () => {
       </div>
       <div className="hourly-container">
         <h3>Hourly Fore-Cast</h3>
-        <div className="hour-dayOne">
-          {threeDayWeather?.forecastday[0]?.hour.map((one) => {
-            return(
-              <Hourly key= {one.time} dayOne={one}/>
-            )
-          })}
+        <div className="hour-one-container">
+        <h3>DAY-01</h3>
+        <h3>{threeDayWeather?.forecastday[0].date}</h3>
+          <div className="hour-one"> 
+            {threeDayWeather?.forecastday[0]?.hour.map((one) => {
+              return <Hourly key={one.time} dayOne={one} />;
+            })}
+          </div>
+        </div>
+        <div className="hour-one-container">
+        <h3>DAY-01</h3>
+        <h3>{threeDayWeather?.forecastday[0].date}</h3>
+          <div className="hour-one"> 
+            {threeDayWeather?.forecastday[0]?.hour.map((one) => {
+              return <Hourly key={one.time} dayOne={one} />;
+            })}
+          </div>
         </div>
       </div>
     </>
