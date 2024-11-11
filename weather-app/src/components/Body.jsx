@@ -13,6 +13,7 @@ import { BsFillSunsetFill } from "react-icons/bs";
 import { CiTempHigh } from "react-icons/ci";
 import { GiRaining } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
+import Hourly from "./Hourly";
 const Body = () => {
   const [searchCity, setSearchCity] = useState("");
   const [weatherLocation, setWeatherLocation] = useState();
@@ -134,14 +135,6 @@ const Body = () => {
             <h3>Local Data/Time: {weatherLocation?.localtime}</h3>
           </div>
         </div>
-        <div className="other">
-          <h3>Day-01</h3>
-          <h3>{threeDayWeather?.forecastday[0]?.date}</h3>
-          <h3>{threeDayWeather?.forecastday[0]?.day?.condition?.text}</h3>
-          <img src={threeDayWeather?.forecastday[0]?.day?.condition?.icon} />
-          <h3>{threeDayWeather?.forecastday[0]?.day?.avgtemp_c}℃</h3>
-          {threeDayWeather?.forecastday[0]?.day?.daily_chance_of_rain}
-        </div>
       </div>
       <div className="three-day-main-container">
         <div className="three-day-container">
@@ -259,6 +252,16 @@ const Body = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="hourly-container">
+        <h3>Hourly Fore-Cast</h3>
+        <div className="hour-dayOne">
+          {threeDayWeather?.forecastday[0]?.hour.map((one) => {
+            return(
+              <Hourly key= {one.time} dayOne={one}/>
+            )
+          })}
         </div>
       </div>
     </>
