@@ -203,7 +203,7 @@ body {
   gap: 0.5rem;
   padding: 0.5rem;
   background-color: #673ab7;
-  border: 2px solid #FFC107;
+  border: 2px solid #ffc107;
   border-radius: 10px;
 }
 .day-one-date {
@@ -257,40 +257,57 @@ body {
 .all-three {
   margin-top: 0.5rem;
 }
-.hourly-container{
+.hourly-container {
   padding: 1.5rem;
-  background-color: #FFC107;
+  background-color: #ffc107;
   box-shadow: 0 10px 12px 0 rgba(235, 201, 201, 0.2), 0 6px 20px 0 #72726c;
   border-radius: 10px;
   font-weight: 900;
   color: #fff;
   margin-inline: auto;
 }
-.hour-one{
+.hour-one {
   display: flex;
-  overflow: auto;
   justify-content: center;
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
   overflow: auto;
-  border: 3px solid #FFC107;
 }
-.hour-one-container{
-  background-color: #009688;
+.hour-one-container {
+  background-color: #673ab7;
   color: #fff;
-  border-radius: 5px;
- 
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.hour-one-container h3{
+.hour-one-container h3 {
   text-align: center;
   padding: 0.5rem;
   font-weight: 900;
 }
-.each-day{
-  box-shadow: #141208 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.each-day {
+  box-shadow: #141208 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   padding: 1.5rem;
   font-weight: 900;
+}
+.hourly-head {
+  background-color: #9c27b0;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.weather-meu-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-weight: 900;
+  cursor: pointer;
 }
 @media (max-width: 790px) {
   .center-container {
@@ -315,7 +332,7 @@ body {
   .input-box {
     padding: 5px 10px;
   }
-  .three-day-container{
+  .three-day-container {
     padding: 0.5rem;
   }
 }

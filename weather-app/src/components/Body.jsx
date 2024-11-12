@@ -13,7 +13,14 @@ import { BsFillSunsetFill } from "react-icons/bs";
 import { CiTempHigh } from "react-icons/ci";
 import { GiRaining } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
+import { FaRegCalendarDays } from "react-icons/fa6";
+import { FaCalendarDay } from "react-icons/fa6";
+import { WiDayWindy } from "react-icons/wi";
+import { WiTime10 } from "react-icons/wi";
 import Hourly from "./Hourly";
+import Hourly2 from "./Hourly";
+import Hourly3 from "./Hourly3";
+
 const Body = () => {
   const [searchCity, setSearchCity] = useState("");
   const [weatherLocation, setWeatherLocation] = useState();
@@ -54,9 +61,15 @@ const Body = () => {
   if (error) {
     return <h1>Something went wrong</h1>;
   }
-
   return (
     <>
+    <div className="weather-menu">
+       <ul className="weather-meu-list">
+        <li>MAIN DETAILS</li>
+        <li>3-DAY FORECAST</li>
+        <li>HOURLY FORECAST</li>
+       </ul>
+    </div>
       <div className="center-container">
         <div className="left-container">
           <h3 className="weather-heading">
@@ -138,7 +151,7 @@ const Body = () => {
       </div>
       <div className="three-day-main-container">
         <div className="three-day-container">
-          <h3 className="three-day-heading">THREE DAY FORECAST</h3>
+          <h3 className="three-day-heading"><WiDayWindy /> THREE DAY FORECAST</h3>
           <div className="all-three">
             <div className="three-day-details">
               <div className="day-one-date">
@@ -255,10 +268,10 @@ const Body = () => {
         </div>
       </div>
       <div className="hourly-container">
-        <h3>Hourly Fore-Cast</h3>
+        <h3 className="hourly-head">  <WiTime10 /> HOURLY FORECAST</h3>
         <div className="hour-one-container">
-        <h3>DAY-01</h3>
-        <h3>{threeDayWeather?.forecastday[0].date}</h3>
+        <h3><FaCalendarDay /> DAY-01</h3>
+        <h3> <FaRegCalendarDays /> {threeDayWeather?.forecastday[0].date}</h3>
           <div className="hour-one"> 
             {threeDayWeather?.forecastday[0]?.hour.map((one) => {
               return <Hourly key={one.time} dayOne={one} />;
@@ -266,11 +279,20 @@ const Body = () => {
           </div>
         </div>
         <div className="hour-one-container">
-        <h3>DAY-01</h3>
-        <h3>{threeDayWeather?.forecastday[0].date}</h3>
+        <h3><FaCalendarDay /> DAY-02</h3>
+        <h3> <FaRegCalendarDays /> {threeDayWeather?.forecastday[1].date}</h3>
           <div className="hour-one"> 
-            {threeDayWeather?.forecastday[0]?.hour.map((one) => {
-              return <Hourly key={one.time} dayOne={one} />;
+            {threeDayWeather?.forecastday[1]?.hour.map((one) => {
+              return <Hourly2 key={one.time} dayOne={one} />;
+            })}
+          </div>
+        </div>
+        <div className="hour-one-container">
+        <h3><FaCalendarDay /> DAY-03</h3>
+        <h3><FaRegCalendarDays /> {threeDayWeather?.forecastday[2].date}</h3>
+          <div className="hour-one"> 
+            {threeDayWeather?.forecastday[2]?.hour.map((one) => {
+              return <Hourly3 key={one.time} dayOne={one} />;
             })}
           </div>
         </div>

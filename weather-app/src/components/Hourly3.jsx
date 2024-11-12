@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { BsCloudRainFill } from "react-icons/bs";
 
-const Hourly = (props) => {
+const Hourly3 = (props) => {
   const { dayOne } = props;
   const { time, feelslike_c, chance_of_rain } = dayOne;
   return (
@@ -19,4 +19,4 @@ const Hourly = (props) => {
   );
 };
 
-export default Hourly;
+export default Hourly3;
