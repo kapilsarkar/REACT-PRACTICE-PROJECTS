@@ -111,7 +111,8 @@ body {
   border-radius: 10px;
   font-weight: 900;
   color: #fff;
-  background-image: url("https://webartdevelopers.com/blog/wp-content/uploads/2019/01/Animated-Weather-Icons-Pure-CSS.gif");
+  
+  background: url("https://i.pinimg.com/originals/0e/db/60/0edb6064ea5e7fc57bd7159e94aad20c.gif");
 }
 .other-weather-details {
   display: flex;
@@ -208,7 +209,7 @@ body {
   background-color: #673ab7;
   border: 2px solid #ffc107;
   border-radius: 10px;
-  background: url("https://webartdevelopers.com/blog/wp-content/uploads/2019/01/Animated-Weather-Icons-HTML-CSS.gif");
+  background-image: url("https://cdn.dribbble.com/users/1364360/screenshots/3937236/weather_icons_dribbble.gif");
 }
 .day-one-date {
   box-shadow: #141208 0px 50px 100px -20px,
