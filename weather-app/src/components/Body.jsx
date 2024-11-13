@@ -63,13 +63,6 @@ const Body = () => {
   }
   return (
     <>
-    <div className="weather-menu">
-       <ul className="weather-meu-list">
-        <li>MAIN DETAILS</li>
-        <li>3-DAY FORECAST</li>
-        <li>HOURLY FORECAST</li>
-       </ul>
-    </div>
       <div className="center-container">
         <div className="left-container">
           <h3 className="weather-heading">
@@ -151,7 +144,9 @@ const Body = () => {
       </div>
       <div className="three-day-main-container">
         <div className="three-day-container">
-          <h3 className="three-day-heading"><WiDayWindy /> THREE DAY FORECAST</h3>
+          <h3 className="three-day-heading">
+            <WiDayWindy /> THREE DAY FORECAST
+          </h3>
           <div className="all-three">
             <div className="three-day-details">
               <div className="day-one-date">
@@ -268,29 +263,46 @@ const Body = () => {
         </div>
       </div>
       <div className="hourly-container">
-        <h3 className="hourly-head">  <WiTime10 /> HOURLY FORECAST</h3>
+        <h3 className="hourly-head">
+          {" "}
+          <WiTime10 /> HOURLY FORECAST
+        </h3>
         <div className="hour-one-container">
-        <h3><FaCalendarDay /> DAY-01</h3>
-        <h3> <FaRegCalendarDays /> {threeDayWeather?.forecastday[0].date}</h3>
-          <div className="hour-one"> 
+          <h3>
+            <FaCalendarDay /> DAY-01
+          </h3>
+          <h3>
+            {" "}
+            <FaRegCalendarDays /> {threeDayWeather?.forecastday[0].date}
+          </h3>
+          <div className="hour-one">
             {threeDayWeather?.forecastday[0]?.hour.map((one) => {
               return <Hourly key={one.time} dayOne={one} />;
             })}
           </div>
         </div>
         <div className="hour-one-container">
-        <h3><FaCalendarDay /> DAY-02</h3>
-        <h3> <FaRegCalendarDays /> {threeDayWeather?.forecastday[1].date}</h3>
-          <div className="hour-one"> 
+          <h3>
+            <FaCalendarDay /> DAY-02
+          </h3>
+          <h3>
+            {" "}
+            <FaRegCalendarDays /> {threeDayWeather?.forecastday[1].date}
+          </h3>
+          <div className="hour-one">
             {threeDayWeather?.forecastday[1]?.hour.map((one) => {
               return <Hourly2 key={one.time} dayOne={one} />;
             })}
           </div>
         </div>
         <div className="hour-one-container">
-        <h3><FaCalendarDay /> DAY-03</h3>
-        <h3><FaRegCalendarDays /> {threeDayWeather?.forecastday[2].date}</h3>
-          <div className="hour-one"> 
+          <h3>
+            <FaCalendarDay /> DAY-03
+          </h3>
+          <h3>
+            <FaRegCalendarDays /> {threeDayWeather?.forecastday[2].date}
+          </h3>
+          <div className="hour-one">
             {threeDayWeather?.forecastday[2]?.hour.map((one) => {
               return <Hourly3 key={one.time} dayOne={one} />;
             })}
