@@ -18,7 +18,4 @@
 
 ![IMG](./public/3.png)
 
-![IMG](./public/4.png)
-
-![IMG](./public/5.png)
 
