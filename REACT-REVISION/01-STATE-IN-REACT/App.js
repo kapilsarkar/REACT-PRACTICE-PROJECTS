@@ -1,16 +1,11 @@
-import LeftArrow from './assets/images/left-arrow.png'
-import AppleCounter from './components/AppleCounter'
+import AppleCounter from "./components/AppleCounter";
 
-const App = () => {
+const App = ({ root }) => {
   return (
     <div>
-      <AppleCounter
-        onClick={(e) => {
-          console.log(e)
-        }}
-      />
+      <AppleCounter root={root} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
