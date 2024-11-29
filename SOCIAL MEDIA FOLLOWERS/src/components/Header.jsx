@@ -47,7 +47,7 @@ const Header = () => {
             className="rounded-full cursor-pointer"
             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvut5zxVEDY-hstpTd-bbtpkE0TZKz0wYgiA0bcgumHduokDOANfWMlxLVcvFzb4THBpDX8igXqq_cP5DhdNDwuiviGC82LhO9mvPidZV6iyejzvrqVVZIhEwEAWOABaPrTYWhw7T9BQxj/s280/hrithik_roshan2.jpg"
           />
-          <p className="text-center font-bold">Hrithik Roashn</p>
+          <p className="text-center font-bold">Hrithik Roshan</p>
           <button
             className="text-center bg-green-900 text-white p-2 rounded-lg cursor-pointer"
             onClick={() => {
