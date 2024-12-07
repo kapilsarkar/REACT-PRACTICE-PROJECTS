@@ -1,16 +1,20 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { FcHome } from "react-icons/fc";
 const Header = () => {
   const [srkFollow, setSrkFollow] = useState("Follow");
   const [vijayFollow, setVijayFollow] = useState("Follow");
   return (
     <>
-      <h3 className="bg-green-900 text-white p-3 text-center font-bold">
+      <h1 className="bg-green-900 text-white p-3 text-center font-bold">
+        <Link to="/">
+          <FcHome className="mx-auto" />
+        </Link>
         Here are the top 10 highest tax-paying celebrities in FY 2024
-      </h3>
+      </h1>
 
-      <header className=" shadow-2xl sticky z-50 top-0">
-        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+      <header className="w-full overflow-x-auto shadow-2xl sticky z-50 top-0">
+        <ul className="flex flex-wrap  mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
           <li className=" text-center pb-2">
             <NavLink
               to="/Srk"
