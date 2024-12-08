@@ -28,7 +28,7 @@ const Srk = () => {
         </div>
 
         <div className="w-full md:w-[55%]">
-          <h3 className="text-center font-bold">Shah Rukh Khan</h3>
+          <h1 className="text-center text-3xl font-bold">Shah Rukh Khan</h1>
           <p className="font-bold p-3">
             Dunki star Shah Rukh Khan has topped the list by paying an
             astounding Rs 92 crore in taxes. SRK&apos;s comeback movie Pathaan,
