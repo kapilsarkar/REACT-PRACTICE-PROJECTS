@@ -11,12 +11,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./components/Home";
+import Salman from "./components/Salman/Salman";
+import Amitabh from "./components/Amitabh/Amitabh";
+import Virat from "./components/Virat/Virat";
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Layout />}>
-    <Route path="" element={<Home/>}/>
-    <Route path="Srk" element={<Srk/>}/>
-    <Route path="Vijay" element={<Vijay/>}/>
-  </Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="" element={<Home />} />
+      <Route path="Srk" element={<Srk />} />
+      <Route path="Vijay" element={<Vijay />} />
+      <Route path="Salman" element={<Salman />} />
+      <Route path="Amitabh" element={<Amitabh />} />
+      <Route path="Virat" element={<Virat />} />
+    </Route>
+  )
 );
 createRoot(document.getElementById("root")).render(
   <StrictMode>

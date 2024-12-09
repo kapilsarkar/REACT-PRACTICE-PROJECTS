@@ -4,6 +4,9 @@ import { FcHome } from "react-icons/fc";
 const Header = () => {
   const [srkFollow, setSrkFollow] = useState("Follow");
   const [vijayFollow, setVijayFollow] = useState("Follow");
+  const [salmanFollow,setSalmanFollow] = useState("Follow");
+  const [amithFollow,setAmitFollow] = useState("Follow");
+  const [viratFollow,setViratFollow] = useState("Follow");
   return (
     <>
       <h1 className="bg-green-900 text-white p-3 text-center font-bold">
@@ -30,8 +33,8 @@ const Header = () => {
                 alt="logo"
               />
             </NavLink>
-            <p>Shah Rukh Khan</p>
-            <p>92 Crore</p>
+            <p className="font-bold">Shah Rukh Khan</p>
+            <p>₹ 92 Crore</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
@@ -58,7 +61,8 @@ const Header = () => {
                 alt="logo"
               />
             </NavLink>
-            <p>Thalapathy Vijay</p>
+            <p className="font-bold">Thalapathy Vijay</p>
+            <p>₹ 80 Crore</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
@@ -72,10 +76,10 @@ const Header = () => {
           </li>
           <li className=" text-center pb-2">
             <NavLink
-              to="/Vijay"
+              to="/Salman"
               className={({ isActive }) =>
                 `block py-2 pr-4 pl-3 duration-200 ${
-                  isActive ? "bg-green-950" : "bg-white"
+                  isActive ? "bg-yellow-300" : "bg-white"
                 }border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
               }
             >
@@ -85,21 +89,22 @@ const Header = () => {
                 alt="logo"
               />
             </NavLink>
-            <p>Salman Khan</p>
+            <p className="font-bold">Salman Khan</p>
+            <p>₹ 75 Crore</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
-                vijayFollow === "Follow"
-                  ? setVijayFollow("UnFollow")
-                  : setVijayFollow("Follow");
+                salmanFollow === "Follow"
+                  ? setSalmanFollow("UnFollow")
+                  : setSalmanFollow("Follow");
               }}
             >
-              {vijayFollow}
+              {salmanFollow}
             </button>
           </li>
           <li className=" text-center pb-2">
             <NavLink
-              to="/Vijay"
+              to="/Amitabh"
               className={({ isActive }) =>
                 `block py-2 pr-4 pl-3 duration-200 ${
                   isActive ? "bg-green-950" : "bg-white"
@@ -112,21 +117,22 @@ const Header = () => {
                 alt="logo"
               />
             </NavLink>
-            <p>Amitabh Bachhan</p>
+            <p className="font-bold">Amitabh Bachhan</p>
+            <p>₹ 71 Crore</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
-                vijayFollow === "Follow"
-                  ? setVijayFollow("UnFollow")
-                  : setVijayFollow("Follow");
+                amithFollow === "Follow"
+                  ? setAmitFollow("UnFollow")
+                  : setAmitFollow("Follow");
               }}
             >
-              {vijayFollow}
+              {amithFollow}
             </button>
           </li>
           <li className=" text-center pb-2">
             <NavLink
-              to="/Vijay"
+              to="/Virat"
               className={({ isActive }) =>
                 `block py-2 pr-4 pl-3 duration-200 ${
                   isActive ? "bg-green-950" : "bg-white"
@@ -139,16 +145,17 @@ const Header = () => {
                 alt="logo"
               />
             </NavLink>
-            <p>Virat Kohli</p>
+            <p className="font-bold">Virat Kohli</p>
+            <p>₹ 66 Crore</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
-                vijayFollow === "Follow"
-                  ? setVijayFollow("UnFollow")
-                  : setVijayFollow("Follow");
+                viratFollow === "Follow"
+                  ? setViratFollow("UnFollow")
+                  : setViratFollow("Follow");
               }}
             >
-              {vijayFollow}
+              {viratFollow}
             </button>
           </li>
         </ul>
