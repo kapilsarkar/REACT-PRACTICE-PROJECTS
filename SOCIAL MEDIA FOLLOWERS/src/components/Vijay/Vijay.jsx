@@ -1,4 +1,9 @@
+import { FcLike } from "react-icons/fc";
+import { FcDislike } from "react-icons/fc";
+import useLikeDisLike from "../UseLikeDislike";
+
 const Vijay = () => {
+  const [like, dislike, Increment, Decrement] = useLikeDisLike();
   return (
     <>
       <div className="w-full p-3 flex flex-col md:flex-row flex-wrap gap-2">
@@ -7,6 +12,11 @@ const Vijay = () => {
             className="w-36[rem] mx-auto rounded-3xl"
             src="https://www.livemint.com/lm-img/img/2024/10/28/600x338/Actor-turned-politician-Vijay-addresses-the-rally-_1730093482862_1730093492503.jpg"
           />
+          <div className="flex gap-2 justify-center cursor-pointer">
+            <FcLike onClick={Increment} /> {like}
+            <FcDislike onClick={Decrement} />
+            {dislike}
+          </div>
         </div>
 
         <div className="w-full md:w-[55%]">

@@ -31,6 +31,7 @@ const Header = () => {
               />
             </NavLink>
             <p>Shah Rukh Khan</p>
+            <p>92 Crore</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
@@ -80,11 +81,11 @@ const Header = () => {
             >
               <img
                 className="w-28 rounded-full p-2"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_h8KEw8hQVvYtJeVeap8kAsmqVGeCFAzbEg&s"
+                src="https://s.cafebazaar.ir/images/icons/com.masterall.salmankhanfilmnames-b513ae1b-1766-45c9-be06-5d00cdcd9053_512x512.png?x-img=v1/resize,h_256,w_256,lossless_false/optimize"
                 alt="logo"
               />
             </NavLink>
-            <p>Thalapathy Vijay</p>
+            <p>Salman Khan</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
@@ -107,11 +108,11 @@ const Header = () => {
             >
               <img
                 className="w-28 rounded-full p-2"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_h8KEw8hQVvYtJeVeap8kAsmqVGeCFAzbEg&s"
+                src="https://images.crunchbase.com/image/upload/c_thumb,h_256,w_256,f_auto,g_face,z_0.7,q_auto:eco,dpr_1/finouq5i9cv1knapmhoq"
                 alt="logo"
               />
             </NavLink>
-            <p>Thalapathy Vijay</p>
+            <p>Amitabh Bachhan</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {
@@ -134,11 +135,11 @@ const Header = () => {
             >
               <img
                 className="w-28 rounded-full p-2"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_h8KEw8hQVvYtJeVeap8kAsmqVGeCFAzbEg&s"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyR_RJ00VyGT6boIvylYnGXpBtaEBMw9H8Hg&s"
                 alt="logo"
               />
             </NavLink>
-            <p>Thalapathy Vijay</p>
+            <p>Virat Kohli</p>
             <button
               className="text-center bg-green-900 text-white px-3 py-1 rounded-lg"
               onClick={() => {

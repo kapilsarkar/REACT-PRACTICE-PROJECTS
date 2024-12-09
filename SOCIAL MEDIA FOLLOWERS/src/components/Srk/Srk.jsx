@@ -1,17 +1,8 @@
-import { useState } from "react";
 import { FcLike } from "react-icons/fc";
 import { FcDislike } from "react-icons/fc";
+import useLikeDisLike from "../UseLikeDislike";
 const Srk = () => {
-  const [like, setLike] = useState(0);
-  const [dislike, setDislike] = useState(0);
-
-  const Increment = () => {
-    setLike(like + 1);
-  };
-
-  const Decrement = () => {
-    setDislike(dislike + 1);
-  };
+  const [like, dislike, Increment, Decrement] = useLikeDisLike();
   return (
     <>
       <div className="w-full p-3 flex flex-col md:flex-row flex-wrap gap-2">
