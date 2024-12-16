@@ -1,11 +1,15 @@
 import Header from "./Header";
-
-const Layout = ()=>{
-    return(
-        <>
-        <Header/>
-        </>
-    )
-}
+import { Outlet } from "react-router-dom";
+const Layout = () => {
+  return (
+    <>
+    <div className=" flex">
+    <Header />
+    <Outlet />
+    </div>
+     
+    </>
+  );
+};
 
 export default Layout;

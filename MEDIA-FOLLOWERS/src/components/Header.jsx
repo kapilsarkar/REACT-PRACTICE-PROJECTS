@@ -1,10 +1,8 @@
 const Header = () => {
   return (
     <>
-      <h2 className=" text-white text-center font-bold p-3 bg-violet-900">
-        MEDIA FOLLOWERS APP
-      </h2>
-      <header className="w-96 p-3 bg-lime-500 shadow-2xl rounded-lg">
+      
+      <header className=" w-72 sm:w-96 p-3 bg-lime-500 shadow-2xl rounded-lg">
         <ul>
           <li className="text-center my-2 p-2 border-2 rounded-xl border-white shadow-2xl cursor-pointer">
             <img
@@ -29,6 +27,7 @@ const Header = () => {
           </li>
         </ul>
       </header>
+      
     </>
   );
 };
