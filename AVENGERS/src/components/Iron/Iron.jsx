@@ -1,4 +1,9 @@
+import { FcLike } from "react-icons/fc";
+import { FcDislike } from "react-icons/fc";
+import UseLikeDislike from "../UseLikeDislike";
+
 const Iron = () => {
+  const [like, disLike, LikeIncrement, DisLikeIncrement] = UseLikeDislike();
   return (
     <>
       <div className="w-full p-3 flex flex-col md:flex-row flex-wrap gap-2">
@@ -7,7 +12,12 @@ const Iron = () => {
             className="w-full rounded-3xl mx-auto"
             src="https://wallpapers.com/images/featured/iron-man-pictures-k83lqhe6vnh95b1m.jpg"
           />
-          <div className="flex gap-2 justify-center cursor-pointer"></div>
+          <div className="flex gap-2 justify-center cursor-pointer">
+            <FcLike onClick={LikeIncrement} />
+            {like}
+            <FcDislike onClick={DisLikeIncrement} />
+            {disLike}
+          </div>
         </div>
 
         <div className="w-full md:w-[55%]">

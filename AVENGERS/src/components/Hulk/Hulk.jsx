@@ -1,13 +1,23 @@
+import { FcLike } from "react-icons/fc";
+import { FcDislike } from "react-icons/fc";
+import UseLikeDislike from "../UseLikeDislike";
+
 const Hulk = () => {
+  const [like, disLike, LikeIncrement, DisLikeIncrement] = UseLikeDislike();
   return (
     <>
       <div className="w-full p-3 flex flex-col md:flex-row flex-wrap gap-2">
         <div className=" w-full md:w-[40%]">
           <img
             className="w-full rounded-3xl mx-auto"
-            src="https://cdn.magicdecor.in/com/2023/10/26161313/Marvelous-Hulk-Hues-1-710x488.jpg"
+            src="https://i.guim.co.uk/img/static/sys-images/Arts/Arts_/Pictures/2012/5/1/1335868873570/Hulk-in-Avengers-Assemble-008.jpg?width=465&dpr=1&s=none&crop=none"
           />
-          <div className="flex gap-2 justify-center cursor-pointer"></div>
+          <div className="flex gap-2 justify-center cursor-pointer">
+          <FcLike onClick={LikeIncrement} />
+            {like}
+            <FcDislike onClick={DisLikeIncrement} />
+            {disLike}
+          </div>
         </div>
 
         <div className="w-full md:w-[55%]">

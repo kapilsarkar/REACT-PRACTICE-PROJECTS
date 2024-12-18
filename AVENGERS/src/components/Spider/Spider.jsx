@@ -1,4 +1,9 @@
+import { FcLike } from "react-icons/fc";
+import { FcDislike } from "react-icons/fc";
+import UseLikeDislike from "../UseLikeDislike";
+
 const Spider = () => {
+  const [like, disLike, LikeIncrement, DisLikeIncrement] = UseLikeDislike();
   return (
     <>
       <div className="w-full p-3 flex flex-col md:flex-row flex-wrap gap-2">
@@ -7,7 +12,12 @@ const Spider = () => {
             className="w-full rounded-3xl mx-auto"
             src="https://wallpapers.com/images/featured/spiderman-pictures-8opf8q4smmpx644d.jpg"
           />
-          <div className="flex gap-2 justify-center cursor-pointer"></div>
+          <div className="flex gap-2 justify-center cursor-pointer">
+            <FcLike onClick={LikeIncrement} />
+            {like}
+            <FcDislike onClick={DisLikeIncrement} />
+            {disLike}
+          </div>
         </div>
 
         <div className="w-full md:w-[55%]">
