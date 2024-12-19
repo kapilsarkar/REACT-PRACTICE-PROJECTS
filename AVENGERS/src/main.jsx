@@ -23,10 +23,11 @@ const router = createBrowserRouter(
       <Route path="/Wolv" element={<Wolv />} />
       <Route path="/Spider" element={<Spider />} />
       <Route path="/Iron" element={<Iron />} />
-      <Route path="/Hulk" element={<Hulk/>}/>
+      <Route path="/Hulk" element={<Hulk />} />
     </Route>
   )
 );
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
