@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-import { useState,useEffect } from "react";
-import { ThemeProvider } from "../contexts/theme";
+import { useState } from "react";
+
 import ThemeButton from "./ThemeButton";
 const Header = () => {
   const [captainFollow, setCaptainFollow] = useState("Follow");
@@ -10,32 +10,15 @@ const Header = () => {
   const [ironFollow, setIronFollow] = useState("Follow");
   const [hulkFollow, setHulkFollow] = useState("Follow");
 
- 
-  const [themeMode,setThemeMode] = useState("light");
-  
-  const lightTheme = ()=>{
-    setThemeMode("light");
-  }
-  const darkTheme = ()=>{
-    setThemeMode("dark");
-  }
-  //actual change in theme code:
-  useEffect(()=>{
-      document.querySelector('html').classList.remove('dark','light');
-      document.querySelector('html').classList.add(themeMode)
-  },[themeMode])
-
-
   return (
-    <ThemeProvider value={{themeMode,darkTheme,lightTheme}}>
+    <>
       <h1 className=" bg-violet-950 text-white p-3 text-center font-bold text-2xl">
         <Link to="/">
           <AiFillHome className="mx-auto" />
         </Link>
         TOP AVENGERS
-      
       </h1>
-      <ThemeButton/>
+      <ThemeButton />
       <header className="w-full shadow-2xl">
         <ul className=" flex justify-center items-center flex-wrap gap-1">
           <li className="text-center cursor-pointer p-2 ">
@@ -140,7 +123,7 @@ const Header = () => {
           </li>
         </ul>
       </header>
-    </ThemeProvider>
+    </>
   );
 };
 
