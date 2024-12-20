@@ -15,7 +15,6 @@ import Spider from "./components/Spider/Spider";
 import Iron from "./components/Iron/Iron";
 import Hulk from "./components/Hulk/Hulk";
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -31,8 +30,6 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-  
-      <RouterProvider router={router} />
-   
+    <RouterProvider router={router} />
   </StrictMode>
 );
