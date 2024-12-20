@@ -14,7 +14,7 @@ import Wolv from "./components/Wolv/Wolv";
 import Spider from "./components/Spider/Spider";
 import Iron from "./components/Iron/Iron";
 import Hulk from "./components/Hulk/Hulk";
-import { ThemeProvider } from "./contexts/ThemeProvider";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,8 +31,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
+  
       <RouterProvider router={router} />
-    </ThemeProvider>
+   
   </StrictMode>
 );
