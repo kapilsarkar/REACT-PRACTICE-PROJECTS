@@ -1,14 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { useState } from "react";
-
+import { useTheme } from "./context/ThemeContext";
 const Header = () => {
   const [captainFollow, setCaptainFollow] = useState("Follow");
   const [wolvFollow, setWolvFollow] = useState("Follow");
   const [spiderFollow, setSpiderFollow] = useState("Follow");
   const [ironFollow, setIronFollow] = useState("Follow");
   const [hulkFollow, setHulkFollow] = useState("Follow");
-
+  const { theme, toggleTheme } = useTheme();
   return (
     <>
       <h1 className=" bg-violet-950 text-white p-3 text-center font-bold text-2xl">
@@ -17,6 +17,14 @@ const Header = () => {
         </Link>
         TOP AVENGERS
       </h1>
+      <label className="inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          onChange={toggleTheme}
+          checked={theme === "dark"}
+        />
+       
+      </label>
 
       <header className="w-full shadow-2xl">
         <ul className=" flex justify-center items-center flex-wrap gap-1">
