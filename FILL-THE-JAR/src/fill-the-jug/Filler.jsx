@@ -8,12 +8,15 @@ const Filler = () => {
       if (prev === 0) return 1;
 
       const change = prev + prev * 0.4;
-      if(change>100) return 100;
+      if (change > 100) return 100;
       return change;
     });
   };
   const emptyTheJug = () => {
-    
+    setFillingPercentage((prev) => {
+      if (prev < 1) return 0;
+      return prev - prev * 0.2;
+    });
   };
   return (
     <>
