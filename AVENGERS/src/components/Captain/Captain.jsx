@@ -16,12 +16,12 @@ const Captain = () => {
     });
   };
 
-  const emptyTheJig = ()=>{
-    setFillingPercentage((prev)=>{
-      if(prev<1) return 0
-      return prev - prev *0.5;
-    })
-  }
+  const emptyTheJig = () => {
+    setFillingPercentage((prev) => {
+      if (prev < 1) return 0;
+      return prev - prev * 0.5;
+    });
+  };
   return (
     <>
       <div className="w-full p-3 flex flex-col  media970px:flex-row flex-wrap gap-2 ">
@@ -37,27 +37,29 @@ const Captain = () => {
             {disLike}
           </div>
         </div>
-        <h2 className="text-center p-2 bg-violet-950 text-2xl text-white font-bold shadow-2xl">
-          Captain America Power Details
-        </h2>
-        <div className="w-full flex flex-wrap justify-center gap-3 mt-2">
-          <img
-            src="https://data.tooliphone.net/iskin/themes/5809/4261/preview-256.png"
-            className="mt-5 w-[200px] h-[200px] relative overflow-hidden shadow-2xl rounded-full animate-spin "
-          />
 
-          <div className="w-[300px] h-[200px]  border-t-0 rounded-3xl relative overflow-hidden shadow-2xl">
-            <div
-              className="w-full bg-blue-600 opacity-70 absolute bottom-0 rounded-b-2xl rounded-t-2xl"
-              style={{ height: `${fillingPercentage}%` }}
-            >
-              <span className="text-white font-bold  animate-pulse">
-                {Math.round(fillingPercentage)}%
-              </span>
+        <div className="w-full ">
+          <h2 className="text-center p-2 bg-violet-950 text-2xl text-white font-bold shadow-2xl">
+            Captain America : Weapon
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3 mt-2">
+            <img
+              src="https://data.tooliphone.net/iskin/themes/5809/4261/preview-256.png"
+              className="mt-5 w-[200px] h-[200px] relative overflow-hidden shadow-2xl rounded-full animate-spin "
+            />
+            <div className="w-[300px] h-[200px]  border-t-0 rounded-3xl relative overflow-hidden shadow-2xl">
+              <div
+                className="w-full bg-violet-700 opacity-70 text-white absolute bottom-0 rounded-b-2xl rounded-t-2xl"
+                style={{ height: `${fillingPercentage}%` }}
+              >
+                <p className=" text-center font-bold  animate-pulse">
+                  {Math.round(fillingPercentage)}%
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className=" flex flex-wrap gap-2 justify-center w-96 mx-auto cursor-pointer">
+        <div className=" flex flex-wrap gap-2 justify-center w-full mx-auto cursor-pointer">
           <button
             className="bg-violet-900 rounded-full text-white p-3"
             onClick={fillTheJug}
@@ -65,7 +67,10 @@ const Captain = () => {
             <ImPower />
             Power Up
           </button>{" "}
-          <button className="bg-violet-900 rounded-full text-white p-3" onClick={emptyTheJig}>
+          <button
+            className="bg-violet-900 rounded-full text-white p-3"
+            onClick={emptyTheJig}
+          >
             <ImPower />
             Power Down
           </button>

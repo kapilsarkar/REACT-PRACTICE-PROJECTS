@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       screens:{
-        'media:970px':'970px',
+        'media970px':'970px',
+        'media425px':'425px',
       }
     },
   },
