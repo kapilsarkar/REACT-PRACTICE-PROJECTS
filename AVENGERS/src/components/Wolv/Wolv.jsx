@@ -2,29 +2,14 @@ import { FcLike } from "react-icons/fc";
 import { FcDislike } from "react-icons/fc";
 import UseLikeDislike from "../UseLikeDislike";
 import { ImPower } from "react-icons/im";
-import { useState } from "react";
+import UseFill from "../UseFill";
+
 const Wolv = () => {
   const [like, disLike, LikeIncrement, DisLikeIncrement] = UseLikeDislike();
-  const [fillingPercentage, setFillingPercentage] = useState(0);
-
-  const fillTheJug = () => {
-    setFillingPercentage((prev) => {
-      if (prev === 0) return 1;
-      const change = prev + prev * 0.5;
-      if (change > 100) return 100;
-      return change;
-    });
-  };
-
-  const emptyTheJig = () => {
-    setFillingPercentage((prev) => {
-      if (prev < 1) return 0;
-      return prev - prev * 0.5;
-    });
-  };
+  const [fillingPercentage, fillTheJug, emptyTheJug] = UseFill();
   return (
     <>
-       <div className="w-full p-3 flex flex-col  media970px:flex-row flex-wrap gap-2 ">
+      <div className="w-full p-3 flex flex-col  media970px:flex-row flex-wrap gap-2 ">
         <div className="w-full md:w-[60%] mx-auto">
           <img
             className="w-full rounded-3xl mx-auto animate-pulse shadow-2xl"
@@ -69,7 +54,7 @@ const Wolv = () => {
           </button>{" "}
           <button
             className="bg-violet-900 rounded-full text-white p-3"
-            onClick={emptyTheJig}
+            onClick={emptyTheJug}
           >
             <ImPower />
             Power Down
@@ -82,14 +67,22 @@ const Wolv = () => {
         </h2>
         <h1 className="text-center text-3xl font-bold mt-2">Wolverine</h1>
         <p className="font-bold p-3">
-        Wolverine (birth name: James Howlett;[1] alias: Logan and Weapon X) is a fictional character appearing in American comic books published by Marvel Comics, often in association with the X-Men. He is a mutant with animal-keen senses, enhanced physical capabilities, a powerful regenerative ability known as a healing factor, a skeleton reinforced with the unbreakable fictional metal adamantium, significantly delayed aging and a prolonged lifespan and three retractable claws in each hand. In addition to the X-Men, Wolverine has been depicted as a member of X-Force, Alpha Flight, the Fantastic Four and the Avengers
+          Wolverine (birth name: James Howlett;[1] alias: Logan and Weapon X) is
+          a fictional character appearing in American comic books published by
+          Marvel Comics, often in association with the X-Men. He is a mutant
+          with animal-keen senses, enhanced physical capabilities, a powerful
+          regenerative ability known as a healing factor, a skeleton reinforced
+          with the unbreakable fictional metal adamantium, significantly delayed
+          aging and a prolonged lifespan and three retractable claws in each
+          hand. In addition to the X-Men, Wolverine has been depicted as a
+          member of X-Force, Alpha Flight, the Fantastic Four and the Avengers
         </p>
         <h3 className="font-bold mt-2 text-center bg-violet-900 text-white p-3">
-        Wolverine: Films
+          Wolverine: Films
         </h3>
         <ul className="font-bold p-3">
           <li>1. X-Men Origins: Wolverine (2009)</li>
-          <li>2.  The Wolverine (2013)</li>
+          <li>2. The Wolverine (2013)</li>
         </ul>
       </div>
     </>

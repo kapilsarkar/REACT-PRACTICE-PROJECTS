@@ -2,26 +2,10 @@ import { FcLike } from "react-icons/fc";
 import { FcDislike } from "react-icons/fc";
 import UseLikeDislike from "../UseLikeDislike";
 import { ImPower } from "react-icons/im";
-import { useState } from "react";
+import UseFill from "../UseFill";
 const Captain = () => {
   const [like, disLike, LikeIncrement, DisLikeIncrement] = UseLikeDislike();
-  const [fillingPercentage, setFillingPercentage] = useState(0);
-
-  const fillTheJug = () => {
-    setFillingPercentage((prev) => {
-      if (prev === 0) return 1;
-      const change = prev + prev * 0.5;
-      if (change > 100) return 100;
-      return change;
-    });
-  };
-
-  const emptyTheJig = () => {
-    setFillingPercentage((prev) => {
-      if (prev < 1) return 0;
-      return prev - prev * 0.5;
-    });
-  };
+  const [fillingPercentage, fillTheJug, emptyTheJug] = UseFill();
   return (
     <>
       <div className="w-full p-3 flex flex-col  media970px:flex-row flex-wrap gap-2 ">
@@ -69,7 +53,7 @@ const Captain = () => {
           </button>{" "}
           <button
             className="bg-violet-900 rounded-full text-white p-3"
-            onClick={emptyTheJig}
+            onClick={emptyTheJug}
           >
             <ImPower />
             Power Down
