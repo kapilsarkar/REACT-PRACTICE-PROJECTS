@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Users from './components/Users'
 
 function App() {
   const [users,setUsers] = useState([
@@ -9,6 +10,9 @@ function App() {
   return (
     <>
       <h2>USER-MANAGEMENT APP</h2>
+      <div>
+        <Users users={users} />
+      </div>
     </>
   )
 }
