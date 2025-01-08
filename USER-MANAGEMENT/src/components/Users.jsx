@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import User from "./User";
 
-const Users = ({ users }) => {
+const Users = ({ users,handleDeleteUser }) => {
   return (
-    <section className="users">
+    <div className="users">
       {users.map((user) => (
-        <User key={users.id} user={user} />
+        <User key={users.id} user={user} handleDeleteUser={handleDeleteUser}/>
       ))}
-    </section>
+    </div>
   );
 };
 
