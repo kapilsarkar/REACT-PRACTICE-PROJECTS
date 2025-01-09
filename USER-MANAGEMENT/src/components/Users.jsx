@@ -1,11 +1,13 @@
-/* eslint-disable react/prop-types */
+import { useContext } from "react";
 import User from "./User";
+import { UsersContext } from "../context/UsersContext";
 
-const Users = ({ users,handleDeleteUser }) => {
+const Users = () => {
+  const { users } = useContext(UsersContext);
   return (
     <div className="users">
       {users.map((user) => (
-        <User key={users.id} user={user} handleDeleteUser={handleDeleteUser}/>
+        <User key={users.id} user={user} />
       ))}
     </div>
   );

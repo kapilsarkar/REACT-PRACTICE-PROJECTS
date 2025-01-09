@@ -1,15 +1,18 @@
-/* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UsersContext } from "../context/UsersContext";
 
-const NewUser = ({ handleAddNewUser }) => {
+const NewUser = () => {
   const [userName, setUserName] = useState("");
+  const {setUsers} = useContext(UsersContext);
+
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     const newUser = { id: new Date().getTime().toString(), userName: userName };
-    handleAddNewUser(newUser);
+    console.log(newUser);
+    setUsers((prevUsers) => [...prevUsers, newUser]);
     setUserName("");
   };
   return (
