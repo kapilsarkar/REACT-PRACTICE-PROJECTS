@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NewUser from "./components/NewUser";
 import { UserContext } from "./context/UserContext";
+import Users from "./components/Users";
 
 function App() {
   const [users, setUsers] = useState([
@@ -15,6 +16,7 @@ function App() {
             TASK-MANAGEMENT APP
           </h2>
           <NewUser />
+          <Users />
         </div>
       </UserContext.Provider>
     </>
