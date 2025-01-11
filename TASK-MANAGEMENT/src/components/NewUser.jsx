@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserContext";
 
 const NewUser = () => {
   const [userName, setUserName] = useState("");
+  const { setUsers } = useContext(UserContext);
 
   const handelUserNameChange = (e) => {
     setUserName(e.target.value);
   };
   const onSubmit = () => {
-    const newUser = { id: new Date().getTime().toString, userName: userName };
+    const newUser = { id: new Date().getTime().toString(), userName: userName };
     console.log(newUser);
+    setUsers((prevUser) => [...prevUser, newUser]);
+    setUserName("");
   };
   return (
     <div className=" flex justify-center mt-2">

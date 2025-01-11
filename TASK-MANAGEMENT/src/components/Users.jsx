@@ -7,8 +7,8 @@ const Users = () => {
   console.log(users)
   return (
     <>
-      <ul className="bg-slate-950 text-white p-1">
-        <li className=" list-none">
+      <ul className="">
+        <li className=" list-none bg-violet-900 text-white p-3 rounded-md">
           {users.map((user) => (
             <User key={user.id} user={user} />
           ))}
