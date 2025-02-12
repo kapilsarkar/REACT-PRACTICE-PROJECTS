@@ -1,8 +1,31 @@
-# React + Vite
+### Search meal by name :
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 
-Currently, two official plugins are available:
+### List all meals by first letter :
+www.themealdb.com/api/json/v1/1/search.php?f=a
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Lookup full meal details by id :
+
+www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+
+### Lookup a single random meal :
+
+www.themealdb.com/api/json/v1/1/random.php
+
+### List all meal categories :
+
+www.themealdb.com/api/json/v1/1/categories.php
+
+### Filter by main ingredient :
+
+https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
+
+### Filter by Category
+www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+
+### Filter by Area
+
+www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
+
+
