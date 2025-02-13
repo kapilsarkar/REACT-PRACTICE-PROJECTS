@@ -1,14 +1,27 @@
 import { useState } from "react";
+import FoodCard from "./FoodCard";
 
 const Body = () => {
   const [searchMeal, setSearchMeal] = useState("");
+  const [msg, setMsg] = useState("Search Your Recipe...");
+  const [data, setData] = useState();
 
   const fetchMeal = async () => {
-    const data = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMeal.toLowerCase()}`
-    );
-    const json = await data.json();
-    console.log(json);
+    if (searchMeal === "") {
+      setMsg("Please Enter Something");
+    } else {
+      const data = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMeal.toLowerCase()}`
+      );
+      const json = await data.json();
+      console.log(json.meals);
+      setData(json.meals);
+      setMsg("Your Search Results are");
+    }
+  };
+
+  const handleInput = (e) => {
+    setSearchMeal(e.target.value);
   };
 
   return (
@@ -18,7 +31,7 @@ const Body = () => {
           type="text"
           className="p-2 border-2 rounded-md shadow-2xl"
           value={searchMeal}
-          onChange={(e) => setSearchMeal(e.target.value)}
+          onChange={handleInput}
         />
         <button
           className="bg-green-600 text-white p-2 rounded-md cursor-pointers"
@@ -26,6 +39,12 @@ const Body = () => {
         >
           Search
         </button>
+      </div>
+      <div className="mt-2">
+        <p className="text-center font-bold">{msg}</p>
+      </div>
+      <div className=" flex justify-center p-2 mt-2">
+        <FoodCard detail={data} />
       </div>
     </>
   );
