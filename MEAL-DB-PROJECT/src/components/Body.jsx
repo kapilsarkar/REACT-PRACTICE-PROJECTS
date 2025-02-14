@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FoodCard from "./FoodCard";
+import FoodCateGories from "./FoodCategories";
 
 const Body = () => {
   const [searchMeal, setSearchMeal] = useState("");
@@ -15,9 +16,9 @@ const Body = () => {
       );
       const json = await data.json();
       console.log(json.meals);
-      setData(json.meals);
-      setMsg("Your Search Results are");
-      setSearchMeal("")
+      setData(json?.meals);
+      setMsg(`Your Search Results For : ${searchMeal.toLowerCase()}`);
+      setSearchMeal("");
     }
   };
 
@@ -35,7 +36,7 @@ const Body = () => {
           onChange={handleInput}
         />
         <button
-          className="bg-green-600 text-white p-2 rounded-md cursor-pointers"
+          className="bg-green-600 text-white p-2 rounded-md cursor-pointers cursor-pointer"
           onClick={() => fetchMeal()}
         >
           Search
@@ -45,8 +46,9 @@ const Body = () => {
         <p className="text-center font-bold">{msg}</p>
       </div>
       <div className=" flex justify-center p-2 mt-2">
-        <FoodCard detail={data}/>
+        <FoodCard detail={data} />
       </div>
+      <FoodCateGories/>
     </>
   );
 };
