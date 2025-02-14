@@ -17,6 +17,7 @@ const Body = () => {
       console.log(json.meals);
       setData(json.meals);
       setMsg("Your Search Results are");
+      setSearchMeal("")
     }
   };
 
@@ -44,7 +45,7 @@ const Body = () => {
         <p className="text-center font-bold">{msg}</p>
       </div>
       <div className=" flex justify-center p-2 mt-2">
-        <FoodCard detail={data} />
+        <FoodCard detail={data}/>
       </div>
     </>
   );
