@@ -1,36 +1,28 @@
 import { useEffect, useState } from "react";
+import TopFoodCategory from "./TopFoodCategory";
 
 const FoodCateGories = () => {
-  const [foodData, setFoodData] = useState();
+  const [foodData, setFoodData] = useState([]);
   useEffect(() => {
     Category();
-  }, [foodData]);
+  }, []);
   const Category = async () => {
     const data = await fetch(
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
     const json = await data.json();
-    console.log(json.categories);
-    setFoodData(json.categories);
+    console.log(json);
+    setFoodData(json?.categories);
   };
   return (
-    
-      <div>
-        <h2 className="text-center font-bold">Top Meal Categories</h2>
-        <div className=" flex flex-wrap justify-center gap-2 p-2">
-          {foodData.map((value) => {
-            return (
-              <>
-                <div className="w-48">
-                    <p>{value.strCategory
-                    }</p>
-                </div>
-              </>
-            );
-          })}
-        </div>
+    <div>
+      <h2 className="text-center font-bold text-2xl">Top Meal Categories</h2>
+      <div className=" flex flex-wrap justify-center gap-2 p-2">
+        {foodData.map((value) => {
+          return <TopFoodCategory key={value.idCategory} foodData={value} />;
+        })}
       </div>
-    
+    </div>
   );
 };
 
