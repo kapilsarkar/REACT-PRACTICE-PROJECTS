@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FoodCard from "./FoodCard";
 import FoodCateGories from "./FoodCategories";
+import RandomMeal from "./RandomMeal";
 
 const Body = () => {
   const [searchMeal, setSearchMeal] = useState("");
@@ -49,6 +50,7 @@ const Body = () => {
         <FoodCard detail={data} />
       </div>
       <FoodCateGories/>
+      <RandomMeal/>
     </>
   );
 };

@@ -16,7 +16,9 @@ const FoodCateGories = () => {
   };
   return (
     <div>
-      <h2 className="text-center font-bold text-2xl">Top Meal Categories</h2>
+      <h2 className="text-center font-bold text-2xl bg-green-700 text-white p-3">
+        Top Meal Categories
+      </h2>
       <div className=" flex flex-wrap justify-center gap-2 p-2">
         {foodData.map((value) => {
           return <TopFoodCategory key={value.idCategory} foodData={value} />;
