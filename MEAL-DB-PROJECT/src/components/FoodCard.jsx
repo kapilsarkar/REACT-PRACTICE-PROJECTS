@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const FoodCard = ({ detail }) => {
   return (
@@ -18,9 +20,12 @@ const FoodCard = ({ detail }) => {
                   </p>
                   <p className=" font-bold text-center">{currVal.strMeal}</p>
                   <p className="font-bold text-center">{currVal.strTags}</p>
+                  <NavLink to={`/${currVal.idMeal}`}>
                   <button className="w-32 mt-5 flex justify-center text-center bg-green-700 font-bold text-white p-3 rounded-b-sm rounded-t-sm cursor-pointer">
                     Recipe
                   </button>
+                  </NavLink>
+                 
                 </div>
               </>
             );
