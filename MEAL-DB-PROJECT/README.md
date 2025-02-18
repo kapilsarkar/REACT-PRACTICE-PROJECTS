@@ -1,31 +1,13 @@
-### Search meal by name :
+### RECIPE APP :
 
-https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+- IN REACT JS,TAILWIND CSS
 
-### List all meals by first letter :
-www.themealdb.com/api/json/v1/1/search.php?f=a
+- USED MEAN DB API
 
-### Lookup full meal details by id :
+- SEARCH MEAL BY NAME AND GET RECIPE.
 
-www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+[LIVE LINK](https://prismatic-souffle-fdf984.netlify.app/)
 
-### Lookup a single random meal :
 
-www.themealdb.com/api/json/v1/1/random.php
-
-### List all meal categories :
-
-www.themealdb.com/api/json/v1/1/categories.php
-
-### Filter by main ingredient :
-
-https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
-
-### Filter by Category
-www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
-
-### Filter by Area
-
-www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
 
 
