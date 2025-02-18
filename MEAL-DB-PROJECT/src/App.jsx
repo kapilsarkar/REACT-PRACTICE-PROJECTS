@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <h2 className=" bg-green-700 text-white p-3 text-center font-bold">
-        MEAL DB PROJECT
+        RECIPE APP
       </h2>
 
       <Routes>
