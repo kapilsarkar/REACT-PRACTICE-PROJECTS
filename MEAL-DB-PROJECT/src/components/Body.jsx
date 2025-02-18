@@ -16,7 +16,6 @@ const Body = () => {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMeal.toLowerCase()}`
       );
       const json = await data.json();
-      console.log(json.meals);
       setData(json?.meals);
       setMsg(`Your Search Results For : ${searchMeal.toLowerCase()}`);
       setSearchMeal("");
@@ -29,10 +28,11 @@ const Body = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-2 p-2">
+      <div className="flex items-center justify-center gap-2 p-5 bg-amber-200">
+        
         <input
           type="text"
-          className="p-2 border-2 rounded-md shadow-2xl"
+          className="p-2  rounded-md border-2 shadow-amber-900"
           value={searchMeal}
           onChange={handleInput}
         />

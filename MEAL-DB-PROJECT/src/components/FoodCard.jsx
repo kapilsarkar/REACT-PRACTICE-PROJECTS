@@ -3,14 +3,14 @@ import { NavLink } from "react-router-dom";
 /* eslint-disable react/prop-types */
 const FoodCard = ({ detail }) => {
   return (
-    <div className=" flex flex-wrap justify-center gap-2  p-2">
+    <div className=" flex flex-wrap justify-center gap-2  p-2 ">
       {!detail
         ? "Enter Recipe Name"
         : detail.map((currVal) => {
-            console.log(currVal);
+            
             return (
               <>
-                <div className=" w-64  shadow-2xl p-2">
+                <div className=" w-64  shadow-2xl p-3 bg-amber-200">
                   <img
                     className=" w-32 rounded-2xl mx-auto drop-shadow-xl cursor-pointer"
                     src={currVal.strMealThumb}
