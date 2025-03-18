@@ -1,21 +1,24 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constant";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   return (
     <div className="w-full flex justify-evenly items-center shadow-2xl">
       <div className="p-3 flex text-2xl font-bold">
         <img className="w-12 animate-pulse" src={LOGO_URL} />
-        <h3 className="mt-6 text-orange-500 antialiased animate-pulse">Food <span className=" text-green-700">App</span></h3>
+        <h3 className="mt-6 text-orange-500 antialiased animate-pulse">
+          Food <span className=" text-green-700">App</span>
+        </h3>
       </div>
       <div className=" hidden md:block">
         <div className="flex justify-center text-sm font-bold">
           <ul className=" flex gap-2 justify-between p-2 cursor-pointer">
             <li className="p-1.5 rounded-xs hover:duration-300 hover:ease-in-out hover:bg-orange-500 hover:text-white">
-              Home
+              <Link to='/'>Home</Link>
             </li>
             <li className="p-1.5 rounded-xs hover:duration-300 hover:ease-in-out hover:bg-orange-500 hover:text-white">
-              About
+              <NavLink to="/About">About</NavLink>
             </li>
             <li className="p-1.5 rounded-xs hover:duration-300 hover:ease-in-out hover:bg-orange-500 hover:text-white">
               Contact
