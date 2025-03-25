@@ -10,17 +10,17 @@ import {
 import Layout from "./components/Layout.jsx";
 import Body from "./components/Body.jsx";
 import About from "./components/About.jsx";
+import Profile from "./components/Profile.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Routes>
-         <Route path="/" element={<Layout />}>
-      <Route path="" element={<Body />} />
-      <Route path="/About" element={<About />}>
-      <Route/>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Body />} />
+      <Route path="About" element={<About />}>
+        {/* Nested Routes Inside About */}
+        <Route path="Profile" element={<Profile />} />
+      </Route>
     </Route>
-    </Routes>
-   
   )
 );
 

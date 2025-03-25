@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { ABOUT_IMG } from "../utils/constant";
+import { Link, Outlet } from "react-router-dom";
 
 const About = () => {
+  const [show, setShow] = useState(false);
   return (
     <div className="w-full">
       <h1 className="mt-3 p-2 font-bold text-xl md:text-3xl text-center">
@@ -10,7 +13,28 @@ const About = () => {
         </span>
       </h1>
       <div className="flex justify-center mt-3 p-2">
-
+        {show ? (
+          <>
+            <Link to="About">
+              <button
+                className="cursor-pointer text-white bg-orange-600 border-none rounded-xs p-3 font-bold"
+                onClick={() => setShow(false)}
+              >
+                Hide My Profile
+              </button>
+            </Link>
+            <Outlet />
+          </>
+        ) : (
+          <Link to="Profile">
+            <button
+              className="cursor-pointer text-white bg-orange-600 border-none rounded-xs p-3 font-bold"
+              onClick={() => setShow(true)}
+            >
+              Show My Profile
+            </button>
+          </Link>
+        )}
       </div>
       <img className="w-full" src={ABOUT_IMG} />
     </div>
