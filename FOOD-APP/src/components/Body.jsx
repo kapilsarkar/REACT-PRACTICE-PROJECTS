@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
-import TopRestaurant from "./TopRestaurant";
+import TopRestaurant, { withDiscountOffer } from "./TopRestaurant";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const RestaurantCardWithDiscount = withDiscountOffer(TopRestaurant);
   useEffect(() => {
     fetchData();
   }, []);
@@ -68,8 +69,18 @@ const Body = () => {
         Top Restaurants
       </h2>
       <div className="flex flex-wrap justify-center gap-1.5 mt-2 w-auto">
-        {listOfRestaurants.map((restaurant) => {
-          return <TopRestaurant resData={restaurant} />;
+      {listOfRestaurants.map((restaurant) => {
+          return (
+           
+              {/* If the RestaurantCard has Discount Offer then show the Discount Offer  */}
+
+              {restaurant.info.aggregatedDiscountInfoV3 ? (
+                <RestaurantCardWithDiscount resData={restaurant} />
+              ) : (
+                <TopRestaurant resData={restaurant} />
+              )}
+            
+          );
         })}
       </div>
     </div>
