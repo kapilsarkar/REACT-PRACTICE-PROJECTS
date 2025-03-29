@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
 import TopRestaurant, { withDiscountOffer } from "./TopRestaurant";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -69,9 +69,12 @@ const Body = () => {
         Top Restaurants
       </h2>
       <div className="flex flex-wrap justify-center gap-1.5 mt-2 w-auto">
-      {listOfRestaurants.map((restaurant) => {
+        {listOfRestaurants.map((restaurant) => {
           return (
-           
+            <Link
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
               {/* If the RestaurantCard has Discount Offer then show the Discount Offer  */}
 
               {restaurant.info.aggregatedDiscountInfoV3 ? (
@@ -79,7 +82,7 @@ const Body = () => {
               ) : (
                 <TopRestaurant resData={restaurant} />
               )}
-            
+            </Link>
           );
         })}
       </div>
