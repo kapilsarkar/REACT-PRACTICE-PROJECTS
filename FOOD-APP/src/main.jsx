@@ -14,6 +14,7 @@ import Profile from "./components/Profile.jsx";
 import NotFound from "./components/NotFound.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import Contact from "./components/Contact.jsx";
+import RestaurantMenu from "./components/RestaurantMenu.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         <Route path="profile" element={<Profile />} />
       </Route>
       <Route path="contact" element={<Contact />} />
+      <Route path="restaurants/:resId" element={<RestaurantMenu />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
