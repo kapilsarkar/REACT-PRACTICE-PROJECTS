@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
 import TopRestaurant, { withDiscountOffer } from "./TopRestaurant";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useRestaurantData from "../hooks/useRestaurantData";
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const RestaurantCardWithDiscount = withDiscountOffer(TopRestaurant);
-  useEffect(() => {
-    fetchData();
-  }, []);
 
+  const [listOfRestaurants, setListOfRestaurant, fetchData] =
+    useRestaurantData();
   const handleSearch = () => {
     const filterData = listOfRestaurants.filter((res) => {
       return res.info.name.toLowerCase().includes(searchText.toLowerCase());
@@ -23,17 +22,11 @@ const Body = () => {
     setSearchText("");
   };
 
-  const fetchData = async () => {
-    const data = await fetch(RESTAURANT_URL);
-    const json = await data.json();
-    console.log(json);
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setListOfRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+  const handleTopRated = ()=>{
+    const topRated = listOfRestaurants.filter((res)=> res.info.avgRating
+    >=4.4)
+    setListOfRestaurant(topRated);
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -60,6 +53,7 @@ const Body = () => {
           >
             All Restaurants
           </button>
+          <button className="cursor-pointer text-white bg-orange-600 border-none rounded-b-xs rounded-t-xs p-1.5 ml-2 font-bold shadow-2xl" onClick={handleTopRated}>Top Rated Restaurants</button>
         </div>
       </div>
       <h2
