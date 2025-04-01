@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link, NavLink } from "react-router-dom";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="w-full flex justify-evenly items-center shadow-2xl">
       <div className="p-3 flex text-2xl font-bold">
@@ -14,6 +16,9 @@ const Header = () => {
       <div className=" hidden md:block">
         <div className="flex justify-center text-sm font-bold">
           <ul className=" flex gap-2 justify-between p-2 cursor-pointer">
+            <li className="p-1.5 animate-pulse">
+              Online Status {onlineStatus ? "🟢" : "🔴"}
+            </li>
             <li className="p-1.5 rounded-xs hover:duration-300 hover:ease-in-out hover:bg-orange-500 hover:text-white">
               <Link to="/">Home</Link>
             </li>
@@ -21,7 +26,7 @@ const Header = () => {
               <NavLink to="about">About</NavLink>
             </li>
             <li className="p-1.5 rounded-xs hover:duration-300 hover:ease-in-out hover:bg-orange-500 hover:text-white">
-             <NavLink to="contact">Contact</NavLink> 
+              <NavLink to="contact">Contact</NavLink>
             </li>
             <li className="p-1.5 rounded-xs hover:duration-300 hover:ease-in-out hover:bg-orange-500 hover:text-white">
               <i className="fa-solid fa-cart-shopping"></i>

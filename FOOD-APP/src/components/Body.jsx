@@ -7,6 +7,7 @@ import useRestaurantData from "../hooks/useRestaurantData";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const RestaurantCardWithDiscount = withDiscountOffer(TopRestaurant);
+  
 
   const [listOfRestaurants, setListOfRestaurant, fetchData] =
     useRestaurantData();
@@ -15,6 +16,8 @@ const Body = () => {
       return res.info.name.toLowerCase().includes(searchText.toLowerCase());
     });
     setListOfRestaurant(filterData);
+
+    
   };
 
   const allSearch = () => {
@@ -22,38 +25,47 @@ const Body = () => {
     setSearchText("");
   };
 
-  const handleTopRated = ()=>{
-    const topRated = listOfRestaurants.filter((res)=> res.info.avgRating
-    >=4.4)
+  const handleTopRated = () => {
+    const topRated = listOfRestaurants.filter(
+      (res) => res.info.avgRating >= 4.7
+    );
     setListOfRestaurant(topRated);
-  }
+  };
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="w-full">
       <div className="p-2">
-        <div className="flex flex-wrap justify-center mt-3">
-          <input
-            className="cursor-pointer border-orange-500 rounded-xs shadow-2xl p-2 font-bold drop-shadow-3xl"
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search..."
-          />
-          <button
-            className="cursor-pointer text-white bg-orange-600 border-none rounded-b-xs rounded-t-xs p-1.5 ml-1 font-bold shadow-2xl"
-            onClick={handleSearch}
-          >
-            Search
-          </button>
+        <div className="flex flex-wrap justify-evenly mt-3">
+          <div className=" flex flex-wrap gap-1">
+            <input
+              className="cursor-pointer border-orange-500 rounded-xs shadow-2xl p-2 font-bold drop-shadow-3xl"
+              type="text"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              placeholder="Search..."
+            />
+            <button
+              className="cursor-pointer text-white bg-orange-600 border-none rounded-b-xs rounded-t-xs p-1.5 ml-1 font-bold shadow-2xl"
+              onClick={handleSearch}
+            >
+              Search
+            </button>
+          </div>
+
           <button
             className="cursor-pointer text-white bg-orange-600 border-none rounded-b-xs rounded-t-xs p-1.5 ml-2 font-bold shadow-2xl"
             onClick={allSearch}
           >
             All Restaurants
           </button>
-          <button className="cursor-pointer text-white bg-orange-600 border-none rounded-b-xs rounded-t-xs p-1.5 ml-2 font-bold shadow-2xl" onClick={handleTopRated}>Top Rated Restaurants</button>
+          <button
+            className="cursor-pointer text-white bg-orange-600 border-none rounded-b-xs rounded-t-xs p-1.5 ml-2 font-bold shadow-2xl"
+            onClick={handleTopRated}
+          >
+            Top Rated Restaurants
+          </button>
         </div>
       </div>
       <h2
