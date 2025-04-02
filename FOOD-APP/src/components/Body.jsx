@@ -37,8 +37,8 @@ const Body = () => {
   ) : (
     <div className="w-full">
       <div className="p-2">
-        <div className="flex flex-wrap justify-evenly mt-3">
-          <div className=" flex flex-wrap gap-1">
+        <div className="flex flex-wrap justify-evenly mt-3 p-2">
+          <div className=" flex flex-wrap gap-1.5">
             <input
               className="cursor-pointer border-orange-500 rounded-xs shadow-2xl p-2 font-bold drop-shadow-3xl"
               type="text"

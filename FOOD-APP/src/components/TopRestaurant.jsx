@@ -6,7 +6,7 @@ import { MdStarRate } from "react-icons/md";
 
 const TopRestaurant = (props) => {
   const { resData } = props;
-  console.log(resData?.info);
+  //console.log(resData?.info);
   const { name, cuisines, avgRating, costForTwo, areaName, cloudinaryImageId } =
     resData?.info;
   return (

@@ -20,6 +20,8 @@ const RestaurantMenu = () => {
 
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
+    console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2])
   return (
     <div className="w-full mt-2">
       <div className=" text-white bg-orange-600 flex flex-wrap justify-center items-center min-h-48 font-bold p-3">
