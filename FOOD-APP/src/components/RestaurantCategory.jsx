@@ -1,18 +1,26 @@
+import { useState } from "react";
 import ItemList from "./ItemList";
 
 const RestaurantCategory = ({ data }) => {
-  console.log(data);
+  const [showItems, setShowItems] = useState(false);
+  //console.log(data);
+  const handleClick = () => {
+    setShowItems(!showItems);
+  };
   return (
     <div>
       {/* accordion header */}
       <div className="w-9/12 text-center mx-auto my-3 text-black font-bold bg-gray-100 shadow-lg p-3 ">
-        <div className="flex justify-between flex-wrap cursor-pointer">
+        <div
+          className="flex justify-between flex-wrap cursor-pointer"
+          onClick={handleClick}
+        >
           <span>
-            {data?.title} ({data?.itemCards.length})
+            {data?.title} ({data.itemCards.length})
           </span>
           <span>⬇️</span>
         </div>
-        <ItemList items={data?.itemCards} />
+        {showItems && <ItemList items={data?.itemCards} />}
       </div>
 
       {/* {accordion body} */}

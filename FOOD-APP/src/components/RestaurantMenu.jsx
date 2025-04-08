@@ -50,8 +50,13 @@ const RestaurantMenu = () => {
         </div>
       </div>
       {/* {categories accordions} */}
-      {categories.map((category)=>{
-       return <RestaurantCategory data={category?.card?.card}/>
+      {categories.map((category) => {
+        return (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            data={category?.card?.card}
+          />
+        );
       })}
     </div>
   );
