@@ -9,7 +9,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
-
+  const dummy = "Dummy Data";
   if (resInfo === null) return <Shimmer />;
   const {
     name,
@@ -55,6 +55,7 @@ const RestaurantMenu = () => {
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card?.card}
+            dummy={dummy}
           />
         );
       })}

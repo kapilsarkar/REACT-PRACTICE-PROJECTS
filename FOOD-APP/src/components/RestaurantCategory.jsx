@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
+const RestaurantCategory = ({ data,dummy }) => {
   const [showItems, setShowItems] = useState(false);
   //console.log(data);
   const handleClick = () => {
@@ -10,7 +10,7 @@ const RestaurantCategory = ({ data }) => {
   return (
     <div>
       {/* accordion header */}
-      <div className="w-9/12 text-center mx-auto my-3 text-black font-bold bg-gray-100 shadow-lg p-3 ">
+      <div className="w-[65%] text-center mx-auto my-3 text-black font-bold bg-gray-100 shadow-lg p-3 ">
         <div
           className="flex justify-between flex-wrap cursor-pointer"
           onClick={handleClick}
@@ -20,7 +20,7 @@ const RestaurantCategory = ({ data }) => {
           </span>
           <span>⬇️</span>
         </div>
-        {showItems && <ItemList items={data?.itemCards} />}
+        {showItems && <ItemList items={data?.itemCards} dummy={dummy} />}
       </div>
 
       {/* {accordion body} */}
