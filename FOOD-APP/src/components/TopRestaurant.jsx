@@ -1,14 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unsafe-optional-chaining */
-import { useContext } from "react";
+
 import { CDN_URL } from "../utils/constant";
 import { MdStarRate } from "react-icons/md";
-import UserContext from "../utils/UserContext";
 
 const TopRestaurant = (props) => {
   const { resData } = props;
-  const {loggedInUser} = useContext(UserContext)
+
   //console.log(resData?.info);
   const { name, cuisines, avgRating, costForTwo, areaName, cloudinaryImageId } =
     resData?.info;
@@ -29,7 +28,6 @@ const TopRestaurant = (props) => {
       </p>
       <p className=" text-red-500">{costForTwo}</p>
       <p className=" text-blue-500">{areaName}</p>
-      <p>{loggedInUser}</p>
     </div>
   );
 };
