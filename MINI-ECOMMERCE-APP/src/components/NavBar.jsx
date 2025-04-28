@@ -13,7 +13,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="flex-none space-x-4">
-            <div>
+            <div className="mt-6">
                 <Link to ='/'>Home</Link>
             </div>
           <div className="dropdown dropdown-end">
