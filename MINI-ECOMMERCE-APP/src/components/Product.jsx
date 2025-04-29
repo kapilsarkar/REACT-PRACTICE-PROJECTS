@@ -14,8 +14,8 @@ const Product = () => {
   };
  
   return (
-    <div>
-      <h2>Product DashBoard</h2>
+    <div className="w-full p-2">
+      <h2 className="font-bold text-2xl text-center p-`">Product DashBoard</h2>
       <div className="flex flex-wrap justify-center gap-1 mt-2 w-full">
         {
           products.map((product)=>{
