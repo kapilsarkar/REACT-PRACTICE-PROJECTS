@@ -1,12 +1,8 @@
-import { Outlet } from "react-router";
-import NavBar from "./components/Navbar";
+import Product from "./components/Product";
 function App() {
   return (
-    <div className=" bg-white">
-      <NavBar />
-      <main className="max-w-7xl min-h-screen mx-auto px-2">
-        <Outlet />
-      </main>
+    <div className="">
+      <Product />
     </div>
   );
 }
