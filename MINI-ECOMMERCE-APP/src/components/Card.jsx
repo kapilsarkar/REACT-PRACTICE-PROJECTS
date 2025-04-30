@@ -1,5 +1,13 @@
+import { useDispatch } from "react-redux";
+import { add } from "../store/cartSlice";
+
 const Card = ({ products }) => {
+  const dispatch = useDispatch()
   console.log(products);
+  const addToCart = (products) => {
+   //Dispatch an add Action 
+      dispatch(add(products))
+  };
   return (
     <div className="w-60 flex flex-wrap justify-center gap-2">
       <div className="w-64">
@@ -12,10 +20,13 @@ const Card = ({ products }) => {
             src={products?.image}
           />
           <p className=" text-center line-clamp-2 font-bold">
-          {products?.title}
+            {products?.title}
           </p>
           <p className="text-center font-bold text-xl">₹ {products?.price}</p>
-          <button className=" bg-green-600 text-white p-2 rounded-sm mt-1 shadow-md">
+          <button
+            className=" bg-green-600 text-white p-2 rounded-sm mt-1 shadow-md"
+            onClick={() => addToCart(products)}
+          >
             Add To Cart
           </button>
         </div>
