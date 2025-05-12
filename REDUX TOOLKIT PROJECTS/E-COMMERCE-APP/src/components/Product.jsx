@@ -10,7 +10,7 @@ const Product = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://dummyjson.com/products");
+    const data = await fetch("https://dummyjson.com/products/search?q=phone");
     const json = await data.json();
     console.log(json.products);
     setProduct(json.products);
