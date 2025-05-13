@@ -16,12 +16,53 @@ const Product = () => {
     setProduct(json.products);
   };
 
+  const handleMobileAccessories = () => {
+    const mobileCategory = products.filter(
+      (mb) => mb.category === "mobile-accessories"
+    );
+    mobileCategory.length <= 1 ? fetchData() : setProduct(mobileCategory);
+  };
+
+  const handleSmartPhone = () => {
+    const smartPhoneCategory = products.filter(
+      (sm) => sm.category === "smartphones"
+    );
+
+    smartPhoneCategory.length <= 1
+      ? fetchData()
+      : setProduct(smartPhoneCategory);
+  };
+  const handleAllProduct = () => {
+    fetchData();
+  };
   return (
-    <div className=" w-full mt-2 p-2 flex flex-wrap justify-center gap-1">
-      {products.map((product) => {
-        return <ProductList key={product?.id} productData={product} />;
-      })}
-    </div>
+    <>
+      <div className=" flex justify-center gap-3 mt-2 p-2">
+        <button
+          className=" p-2 font-medium cursor-pointer bg-purple-700 text-white shadow-2xl rounded-b-2xl rounded-t-2xl"
+          onClick={handleMobileAccessories}
+        >
+          Mobile-Accessories
+        </button>
+        <button
+          className=" p-2 font-medium cursor-pointer bg-purple-700 text-white shadow-2xl rounded-b-2xl rounded-t-2xl"
+          onClick={handleAllProduct}
+        >
+          All Products
+        </button>
+        <button
+          className=" p-2 font-medium cursor-pointer bg-purple-700 text-white shadow-2xl rounded-b-2xl rounded-t-2xl"
+          onClick={handleSmartPhone}
+        >
+          Smartphones
+        </button>
+      </div>
+      <div className=" w-full mt-2 p-2 flex flex-wrap justify-center gap-2">
+        {products.map((product) => {
+          return <ProductList key={product?.id} productData={product} />;
+        })}
+      </div>
+    </>
   );
 };
 
