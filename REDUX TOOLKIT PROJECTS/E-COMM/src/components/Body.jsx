@@ -18,7 +18,7 @@ const Body = () => {
 
   return (
     <>
-      <ProductCategory productCategory = {{product,setProduct}}/>
+      <ProductCategory product={product} setProduct={setProduct} fetchData={fetchData}/>
       <div className=" w-full mt-2 p-2 flex flex-wrap justify-center gap-2">
         {product.map((pr) => {
           return <AllProduct key={pr.id} productData={pr} />;
