@@ -25,7 +25,7 @@ const Header = () => {
           Expense Tracker App
         </h2>
         <button
-          className="ml-auto p-2 border bottom-2 bg-white text-black dark:bg-gray-950 dark:text-white rounded"
+          className="ml-auto p-2 border-2 bg-white text-black dark:bg-gray-950 dark:text-white rounded"
           onClick={() => dispatch(toggleTheme())}
         >
           {isDarkMode ? <MdDarkMode /> : <MdOutlineLightMode />}
