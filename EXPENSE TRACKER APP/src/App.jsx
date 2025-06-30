@@ -1,13 +1,11 @@
-
+import Header from "./components/Header";
 
 function App() {
-  
-
   return (
     <>
-    <h2 className=" bg-gray-950 text-white">Expense Tracker App</h2>
+      <Header />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
