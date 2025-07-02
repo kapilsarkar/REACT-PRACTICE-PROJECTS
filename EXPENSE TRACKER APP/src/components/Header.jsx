@@ -1,9 +1,14 @@
 import { useEffect } from "react";
-import { GiExpense } from "react-icons/gi";
+import { TbCoinRupeeFilled } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../store/themeSlice";
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
+import { IoIosHome } from "react-icons/io";
+import { IoIosAddCircle } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
+import { FaFilterCircleDollar } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -19,8 +24,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white flex flex-wrap items-center justify-between p-3">
-        <GiExpense className="mt-3" />
+      <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white flex flex-wrap items-center justify-between p-3 shadow-lg">
+        <TbCoinRupeeFilled className=" text-2xl" />
         <h2 className=" bg-white text-black dark:bg-gray-950 dark:text-white p-3 font-bold">
           Expense Tracker App
         </h2>
@@ -30,6 +35,29 @@ const Header = () => {
         >
           {isDarkMode ? <MdDarkMode /> : <MdOutlineLightMode />}
         </button>
+      </div>
+      <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white shadow-lg">
+        <ul className=" flex shadow-xl list-none flex-wrap justify-between cursor-pointer p-3 font-bold gap-2">
+          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
+            <Link to="/">
+              <IoIosHome className="mt-1" /> Home
+            </Link>
+          </li>
+          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
+            <Link to="/add">
+              <IoIosAddCircle className="mt-1" />
+              Add/Update Expense
+            </Link>
+          </li>
+          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
+            <MdDelete className="mt-1" />
+            Delete/Expense
+          </li>
+          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
+            <FaFilterCircleDollar className="mt-1" />
+            Filter By Category
+          </li>
+        </ul>
       </div>
     </>
   );
