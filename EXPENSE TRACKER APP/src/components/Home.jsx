@@ -4,7 +4,8 @@ import Expense from "./Expense";
 import Income from "./Income";
 import { useDispatch } from "react-redux";
 import { addIncome, resetIncome } from "../store/incomeSlice";
-
+import Calendar from "react-calendar";
+import "react-datepicker/dist/react-datepicker.css";
 const Home = () => {
   const [incomeInput, setIncomeInput] = useState("");
   const dispatch = useDispatch();
@@ -44,6 +45,10 @@ const Home = () => {
             placeholder="Add Income/Budget"
             className=" mt-2 p-1 sm:p-3  shadow-md font-semibold rounded-md bg-white text-black dark:bg-gray-800 dark:text-white"
           />
+          <label className="block mb-2 text-sm font-medium">
+            Select a Date:
+          </label>
+         <Calendar/>
           <div className=" flex flex-wrap justify-between gap-2 mt-2">
             <button
               type="submit"
@@ -89,9 +94,9 @@ const Home = () => {
           </div>
         </form>
         <div className=" w-72 sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg">
-             <button className=" px-2 py-1 sm:py-2 bg-blue-500 text-white font-semibold rounded-md">
-              Calculate Balance
-            </button>
+          <button className=" px-2 py-1 sm:py-2 bg-blue-500 text-white font-semibold rounded-md">
+            Calculate Balance
+          </button>
         </div>
       </div>
     </div>
