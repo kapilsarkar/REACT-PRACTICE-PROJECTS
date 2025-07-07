@@ -1,19 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Load from localStorage initially
+const initialExpense = JSON.parse(localStorage.getItem("expense")) || [];
 
 const expenseSlice = createSlice({
     name: "expense",
     initialState: {
-        expense: JSON.parse(localStorage.getItem("expense")) || 0,
+        expenses: initialExpense,
     },
     reducers: {
         addExpense: (state, action) => {
-            state.expense = state.expense + action.payload;
-            localStorage.setItem("expense", JSON.stringify(state.expense));
+            const newExpense = {
+                id: Date.now(), // unique ID
+                title: action.payload.title,
+                amount: action.payload.amount,
+                category: action.payload.category,
+            }
+            state.expenses.push(newExpense);
+            localStorage.setItem("expenses", JSON.stringify(state.expenses));
+
         },
         resetExpense: (state) => {
-            state.expense = 0;
-            localStorage.setItem("expense", JSON.stringify(0));
+            state.expenses = [];
+            localStorage.setItem("expenses", JSON.stringify([]));
         },
     },
 });

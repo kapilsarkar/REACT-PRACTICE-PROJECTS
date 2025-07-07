@@ -18,14 +18,21 @@ const Home = () => {
 
   const handleAddExpense = (e) => {
     e.preventDefault();
-    const numAmount = parseFloat(amount);
 
-    if (!title || isNaN(numAmount) || numAmount <= 0) {
-      alert("Please Enter Valid Expense Details");
+    // Trim to prevent whitespace-only inputs
+    if (!title.trim() || !amount || !category.trim()) {
+      alert("Please fill in all fields before adding an expense.");
       return;
     }
 
-    dispatch(addExpense(numAmount));
+    const parsedAmount = parseFloat(amount);
+    if (isNaN(parsedAmount) || parsedAmount <= 0) {
+      alert("Please enter a valid amount greater than 0.");
+      return;
+    }
+
+    //Dispatch to Redux
+    dispatch(addExpense({ title, amount: parseFloat(amount), category }));
 
     setTitle("");
     setAmount("");
