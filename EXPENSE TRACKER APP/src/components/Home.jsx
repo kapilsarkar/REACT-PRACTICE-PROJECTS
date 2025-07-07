@@ -5,14 +5,12 @@ import Income from "./Income";
 import { useDispatch } from "react-redux";
 import { addIncome, resetIncome } from "../store/incomeSlice";
 import { addExpense, resetExpense } from "../store/expenseSlice";
-import Calendar from "react-calendar";
 import "react-datepicker/dist/react-datepicker.css";
 const Home = () => {
   const [incomeInput, setIncomeInput] = useState("");
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
-  const [date, setDate] = useState(new Date());
 
   const dispatch = useDispatch();
 
@@ -62,9 +60,12 @@ const Home = () => {
     <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white pt-5">
       <div className=" flex justify-center flex-wrap gap-3 p-5">
         <Income />
-        <Expense />
         <Balance />
       </div>
+      <div className=" mt-1 w-full flex flex-wrap">
+        <Expense />
+      </div>
+
       <div className="w-full flex justify-center flex-wrap gap-2 sm:p-5 bg-white text-black dark:bg-gray-950 dark:text-white">
         <form
           onSubmit={handleAddIncome}
@@ -79,12 +80,7 @@ const Home = () => {
             placeholder="Add Income/Budget"
             className=" mt-2 p-1 sm:p-3  shadow-md font-semibold rounded-md bg-white text-black dark:bg-gray-800 dark:text-white"
           />
-          <p className="block mb-2 text-sm mt-2 font-bold">Select a Date:</p>
-          <Calendar
-            value={date}
-            onChange={setDate}
-            className="p-2 border dark:border-white border-black rounded-md"
-          />
+        
           <div className=" flex flex-wrap justify-between gap-2 mt-2">
             <button
               type="submit"
@@ -122,13 +118,19 @@ const Home = () => {
             className=" mt-2 p-1 sm:p-3  shadow-md font-semibold rounded-md bg-white text-black dark:bg-gray-800 dark:text-white"
           />
           <p className=" font-bold mt-2 ">Add a Category To Your Expense</p>
-          <input
-            type="text"
-            placeholder="Ex: Groceries,Recharge"
+          <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className=" mt-2 p-1 sm:p-3  shadow-md font-semibold rounded-md bg-white text-black dark:bg-gray-800 dark:text-white"
-          />
+            className="mt-2 p-1 sm:p-3 shadow-md font-semibold rounded-md bg-white text-black dark:bg-gray-800 dark:text-white"
+          >
+            <option value="">Select Category</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Recharge">Recharge</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+          </select>
           <div className=" mt-2 flex flex-wrap gap-1">
             <button className=" px-2 py-1 sm:px-3 sm:py-2 bg-blue-500 text-white font-semibold rounded-md">
               Add Expense
