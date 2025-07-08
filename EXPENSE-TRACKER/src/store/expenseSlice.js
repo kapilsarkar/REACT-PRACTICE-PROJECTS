@@ -27,5 +27,10 @@ const expenseSlice = createSlice({
     },
 });
 
+// Selector to calculate total expense
+export const selectTotalExpense = (state) => {
+    return state.expense.expenses.reduce((total, expense) => total + expense.amount, 0);
+}
+
 export const { addExpense, resetExpense } = expenseSlice.actions;
 export default expenseSlice.reducer;

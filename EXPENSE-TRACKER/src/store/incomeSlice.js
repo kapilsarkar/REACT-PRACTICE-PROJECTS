@@ -18,5 +18,7 @@ const incomeSlice = createSlice({
     },
 });
 
+export const selectIncome = (state) => state.income.income;
+
 export const { addIncome, resetIncome } = incomeSlice.actions;
 export default incomeSlice.reducer;
