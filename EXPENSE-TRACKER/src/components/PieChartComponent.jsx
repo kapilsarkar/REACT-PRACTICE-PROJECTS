@@ -22,7 +22,7 @@ const PieChartComponent = () => {
   const COLORS = ["#00C49F", "#FF8042"];
   return (
     <>
-      <div className="w-full h-[300px]">
+      <div className="w-full h-64">
         <ResponsiveContainer>
           <PieChart>
             <Pie

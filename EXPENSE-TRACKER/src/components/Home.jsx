@@ -60,6 +60,10 @@ const Home = () => {
     <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white pt-2">
       <div className=" flex justify-center flex-wrap gap-3 p-3">
         <Income />
+         <div className=" w-72  sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg">
+          <h2 className=" text-center font-bold ">Income/Expense Chart</h2>
+          <PieChartComponent />
+        </div>
         <Balance />
       </div>
       <div className=" w-full flex flex-wrap">
@@ -69,7 +73,7 @@ const Home = () => {
       <div className="w-full flex justify-center flex-wrap gap-2 sm:p-5 bg-white text-black dark:bg-gray-950 dark:text-white">
         <form
           onSubmit={handleAddIncome}
-          className=" w-72 sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg"
+          className=" w-96 sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg"
         >
           <p className=" font-bold text-center">Add Income/Budget</p>
 
@@ -143,10 +147,7 @@ const Home = () => {
             </button>
           </div>
         </form>
-        <div className=" w-72 sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg">
-         <h2 className=" text-center font-bold ">Income/Expense Chart</h2>
-        <PieChartComponent/>
-        </div>
+       
       </div>
     </div>
   );

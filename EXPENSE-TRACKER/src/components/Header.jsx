@@ -36,7 +36,7 @@ const Header = () => {
           {isDarkMode ? <MdDarkMode /> : <MdOutlineLightMode />}
         </button>
       </div>
-      <div className="w-full bg-white text-black dark:bg-gray-900 dark:text-white shadow-lg">
+      {/* <div className="w-full bg-white text-black dark:bg-gray-900 dark:text-white shadow-lg">
         <ul className=" flex flex-col media650:flex-row shadow-xl list-none flex-wrap justify-between cursor-pointer p-3 font-bold gap-2">
           <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
             <Link className=" flex" to="/">
@@ -58,7 +58,7 @@ const Header = () => {
             Filter By Category
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };

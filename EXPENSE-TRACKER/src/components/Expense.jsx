@@ -6,7 +6,7 @@ const Expense = () => {
   const totalExpense = useSelector(selectTotalExpense);
 
   return (
-    <div className="w-[77rem] mx-auto h-auto bg-white text-black dark:bg-gray-900 dark:text-white border border-gray-300  rounded-md p-5 mt-2 shadow-lg">
+    <div className="w-[74rem]  mx-auto h-auto bg-white text-black dark:bg-gray-900 dark:text-white border border-gray-300  rounded-md p-5 mt-2 shadow-lg">
       <h2 className=" font-bold text-3xl text-center text-red-500"> Expense</h2>
       <h2 className="font-bold text-xl text-center text-red-500">
         Total Expenses:₹ {totalExpense}
