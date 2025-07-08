@@ -5,6 +5,7 @@ import Income from "./Income";
 import { useDispatch } from "react-redux";
 import { addIncome, resetIncome } from "../store/incomeSlice";
 import { addExpense, resetExpense } from "../store/expenseSlice";
+import PieChartComponent from "./PieChartComponent";
 const Home = () => {
   const [incomeInput, setIncomeInput] = useState("");
   const [title, setTitle] = useState("");
@@ -56,12 +57,12 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white pt-5">
-      <div className=" flex justify-center flex-wrap gap-3 p-5">
+    <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white pt-2">
+      <div className=" flex justify-center flex-wrap gap-3 p-3">
         <Income />
         <Balance />
       </div>
-      <div className=" mt-1 w-full flex flex-wrap">
+      <div className=" w-full flex flex-wrap">
         <Expense />
       </div>
 
@@ -143,10 +144,8 @@ const Home = () => {
           </div>
         </form>
         <div className=" w-72 sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg">
-          <button className=" px-2 py-1 sm:py-2 bg-blue-500 text-white font-semibold rounded-md">
-            Show Chart
-          </button>
-         
+         <h2 className=" text-center font-bold ">Income/Expense Chart</h2>
+        <PieChartComponent/>
         </div>
       </div>
     </div>
