@@ -3,8 +3,8 @@ import Balance from "./Balance";
 import Expense from "./Expense";
 import Income from "./Income";
 import { useDispatch } from "react-redux";
-import { addIncome, resetIncome } from "../store/incomeSlice";
-import { addExpense, resetExpense } from "../store/expenseSlice";
+import { addIncome } from "../store/incomeSlice";
+import { addExpense } from "../store/expenseSlice";
 import PieChartComponent from "./PieChartComponent";
 const Home = () => {
   const [incomeInput, setIncomeInput] = useState("");
@@ -39,7 +39,9 @@ const Home = () => {
 
   const handleResetExpense = (e) => {
     e.preventDefault();
-    dispatch(resetExpense());
+    setTitle("");
+    setAmount("");
+    setCategory("");
   };
 
   const handleAddIncome = (e) => {
@@ -52,7 +54,6 @@ const Home = () => {
   };
 
   const handleReset = () => {
-    dispatch(resetIncome());
     setIncomeInput("");
   };
 
@@ -60,7 +61,7 @@ const Home = () => {
     <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white pt-2">
       <div className=" flex justify-center flex-wrap gap-3 p-3">
         <Income />
-         <div className=" w-72  sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg">
+        <div className=" w-72  sm:w-96 mt-2 border rounded-md border-white  p-3 shadow-lg">
           <h2 className=" text-center font-bold ">Income/Expense Chart</h2>
           <PieChartComponent />
         </div>
@@ -147,7 +148,6 @@ const Home = () => {
             </button>
           </div>
         </form>
-       
       </div>
     </div>
   );
