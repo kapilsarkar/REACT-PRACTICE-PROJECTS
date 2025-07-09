@@ -13,7 +13,7 @@
 ![img](./public/5.png)
 ### OVERVIEW :
 
-- An Expense Tracker App created using React,Tailwind-CSS.
+- An Expense Tracker App created using React,Tailwind-CSS,Redux-Toolkit.
 
 - User can add,reset Income/Budget.
 
@@ -27,7 +27,7 @@
 
 - Toggle between Dark/Light Mode using Redux Toolkit.
 
-
+- Every Operations are stored using local storage. 
 
 ### Libraries and Technologies Used :
 
