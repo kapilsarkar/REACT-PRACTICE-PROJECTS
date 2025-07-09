@@ -67,7 +67,7 @@ const Home = () => {
         </div>
         <Balance />
       </div>
-      <div className=" w-full flex flex-wrap">
+      <div className=" w-full flex flex-wrap justify-center">
         <Expense />
       </div>
 

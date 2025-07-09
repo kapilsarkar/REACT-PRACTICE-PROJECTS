@@ -22,9 +22,9 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white flex flex-wrap items-center justify-between p-3 shadow-lg">
+      <div className="w-full bg-white text-black dark:bg-gray-950 dark:text-white flex flex-wrap items-center justify-between p-2 shadow-lg">
         <TbCoinRupeeFilled className=" text-2xl" />
-        <h2 className=" bg-white text-xl text-black dark:bg-gray-950 dark:text-white p-3 font-bold">
+        <h2 className=" bg-white text-2xl text-black dark:bg-gray-950 dark:text-white p-1 font-bold">
           Expense Tracker App
         </h2>
         <button
