@@ -6,7 +6,6 @@ import { MdDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
 import { IoIosHome } from "react-icons/io";
 import { IoIosAddCircle } from "react-icons/io";
-import { FaFilterCircleDollar } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const Header = () => {
@@ -36,22 +35,17 @@ const Header = () => {
         </button>
       </div>
       <div className="w-full bg-white text-black dark:bg-gray-900 dark:text-white shadow-lg">
-        <ul className=" flex flex-col media650:flex-row shadow-xl list-none flex-wrap justify-between cursor-pointer p-3 font-bold gap-2">
-          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
+        <ul className=" flex flex-col media650:flex-row shadow-xl list-none flex-wrap justify-around cursor-pointer p-3 font-bold gap-2">
+          <li className=" flex text-2xl gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
             <Link className=" flex" to="/">
               <IoIosHome className="mt-1" /> Home
             </Link>
           </li>
-          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
+          <li className=" flex text-2xl gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
             <Link className=" flex" to="/reset">
               <IoIosAddCircle className="mt-1" />
               Reset Income/Expense
             </Link>
-          </li>
-          
-          <li className=" flex gap-1 hover:bg-slate-300 hover:text-black p-2 rounded-md">
-            <FaFilterCircleDollar className="mt-1" />
-            Filter By Category
           </li>
         </ul>
       </div>
